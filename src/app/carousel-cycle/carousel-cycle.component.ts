@@ -1,4 +1,4 @@
-import { Component, ContentChild, Input, NgZone, OnInit, TemplateRef } from '@angular/core';
+import { Component, ContentChild, Input, NgZone, OnInit, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { FullScreen } from '../fullscreen.service';
 import { CommonModule, NgFor } from '@angular/common';
 
@@ -7,7 +7,8 @@ import { CommonModule, NgFor } from '@angular/common';
   standalone: true,
   imports: [CommonModule, NgFor],
   templateUrl: './carousel-cycle.component.html',
-  styleUrl: './carousel-cycle.component.scss'
+  styleUrl: './carousel-cycle.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class CarouselCycleComponent implements OnInit {
   @Input() items!: any[];

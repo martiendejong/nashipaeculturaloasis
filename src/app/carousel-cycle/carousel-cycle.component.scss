@@ -11,7 +11,7 @@
 .item {
     width: 100vw;
     height: 100vh;
-    display: inline-flex;
+    display: inline-block;
     position: relative;
     text-wrap: wrap;
     transition: left ease-in-out 1s;
@@ -47,9 +47,4 @@
 
 .item.notransition {
     transition: none !important;
-}
-
-.item .itemcontainer {
-    margin: auto;
-    display: flex;
 }

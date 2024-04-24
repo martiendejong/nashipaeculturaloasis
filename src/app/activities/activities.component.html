@@ -1,7 +1,49 @@
-<div class="minviewheight">
-    <app-carousel-cycle [items]="[{title: 'title'}, {title: 'title2'}]">
+<div class="viewheight activities">
+    <app-carousel-cycle [items]="[
+    {
+        image: 'assets/barbecue.jpeg', 
+        title: ['Maasai Barbecue'],
+        text: 
+        [
+            'Visit our luxurious accomodation surrounded by the beauty of nature and wildlife.',
+            'Owned and operated by Maasai, your stay benefits struggling local families directly.'
+        ]
+    }, {
+        image: 'assets/safari.jpeg', 
+        title: ['Experience the Wild Like Never Before with Nashipae Safari!'],
+        duration: 'Whole day',
+        text: 
+        [
+            'You wake up before sunrise and hear the rustling of leaves and feel the vibrations of elephants walking in the distance.', 
+            'A refreshing breakfast is waiting for you at the dining table, and your tour guide is ready to take you straight to the conservancy where the wild animals are waking up as well.',
+            'Armed with a camera and a king\'s lunch box you jump into the action. Our seasoned guides who grew up in the area are constantly updating each other so that you don\'t miss a thing of what is happening!'
+        ]
+    }, {
+        image: 'assets/dinner.jpg', 
+        title: ['Healthy Meals'],
+        text: 
+        [
+            'Taste original Kenyan foods like Ugali, Nyama Choma or Githeri.',
+            'Fill your stomach with our delicious burgers and fries or pizzas.',
+            'We will pack you a kings lunch for your trips so you will never get hungry like our children.'
+        ]                
+    }]">
         <ng-template let-item>
-            <h1>{{ item.title }}</h1>
+            <div class="center">
+                <div class="itemcontainer">
+                    <div class="image">
+                        <app-full-img [src]="item.image" />
+                    </div>
+                    <div class="text">
+                        <h1>
+                            <ng-container *ngFor="let item of item.title; let last = last">
+                                {{ item }}<br *ngIf="!last" />
+                            </ng-container>                    
+                        </h1>
+                        <p *ngFor="let line of item.text">{{line}}</p>
+                    </div>
+                </div>
+            </div>
         </ng-template>
     </app-carousel-cycle>
 </div>

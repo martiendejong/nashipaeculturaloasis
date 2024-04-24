@@ -4,17 +4,13 @@
         [style]="{left: -i + '00vw'}" 
         [class.notransition]="noTransition" 
         [class.shake]="shake">
-        <div class="itemcontainer" (mousemove)="cycleForegroundActive = false" (mouseout)="cycleForegroundActive = true">
-            <ng-container *ngTemplateOutlet="template; context: { $implicit: item }"></ng-container>
-        </div>
+        <ng-container *ngTemplateOutlet="template; context: { $implicit: item }"></ng-container>
     </div>
     <div
         class="item" 
         [style]="{left: -i + '00vw'}" 
         [class.notransition]="noTransition" 
         [class.shake]="shake">
-        <div class="itemcontainer" (mousemove)="cycleForegroundActive = false" (mouseout)="cycleForegroundActive = true">
-            <ng-container *ngTemplateOutlet="template; context: { $implicit: items[0] }"></ng-container>
-        </div>
+        <ng-container *ngTemplateOutlet="template; context: { $implicit: items[0] }"></ng-container>
     </div>
 </div>

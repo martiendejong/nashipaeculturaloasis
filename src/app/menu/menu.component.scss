@@ -1,7 +1,7 @@
 .menu {
     position: fixed; 
     top: 0;
-    width: 100vw;
+    width: calc(100vw - 18px);
     padding-top: 2vh;
     padding-bottom: 2vh;
     text-align: center; 
@@ -32,7 +32,7 @@ a:hover {
 
 .menu.scroll-otherpage a {
     color: #000;
-    background-color: white;
+    background-color: #ccc;
 }
 
 .menu.scroll-transitioning a:hover, 

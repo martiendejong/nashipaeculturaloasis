@@ -19,7 +19,6 @@
 }
 
 .foreground {
-    text-wrap: nowrap;
     position: absolute;
     top: 0;
     left: 0;
@@ -28,53 +27,40 @@
     overflow: hidden;
 }
 
-.foreground .item {
-    width: 100vw;
-    height: 100vh;
-    display: inline-flex;
-    position: relative;
-    text-wrap: wrap;
-    transition: left ease-in-out 1s;
+.top-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Define the gradient */
+  }
+
+  .bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Define the gradient */
+  }
+
+
+
+/* content */
+
+.center {
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 
-.shake {
-    animation: shake 1.2s linear;
+.itemcontainer {
+  margin: auto;
+  display: flex;
 }
 
-@keyframes shake {
-    0% {
-      transform: translateX(0);
-    }
-    10% {
-      transform: translateX(-.25vw);
-    }
-    30% {
-      transform: translateX(.5vw);
-    }
-    50% {
-        transform: translateX(-1vw);
-    }
-    70% {
-        transform: translateX(.5vw);
-    }
-    90% {
-        transform: translateX(-.25vw);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }  
-
-.item.notransition {
-    transition: none !important;
-}
-
-.foreground .item .itemcontainer {
-    margin: auto;
-    display: flex;
-}
-
-.foreground .item .image {
+.image {
     box-shadow: 2px 2px 5px #000;
     border-radius: 3vh;
     height: 45vh;
@@ -82,7 +68,7 @@
     overflow: hidden;
 }
 
-.foreground .item .text {
+.text {
     box-shadow: 2px 2px 5px #000;
     margin-left: 5vh;
     padding-left: 5vh;
@@ -109,30 +95,12 @@
     cursor: pointer;
   }
 
-  .foreground .item .text:hover {
+  .text:hover {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
   }
 
-  .foreground .item .text p {
+  .text p {
     line-height: 140%;
-  }
-
-  .top-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 40vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Define the gradient */
-  }
-
-  .bottom-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40vh;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Define the gradient */
   }
 
   h1 {
