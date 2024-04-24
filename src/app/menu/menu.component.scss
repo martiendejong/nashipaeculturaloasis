@@ -1,0 +1,61 @@
+.menu {
+    position: fixed; 
+    top: 0;
+    width: 100vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    text-align: center; 
+    z-index: 10;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    padding: 2vh;
+    background-color: #000;
+    font-size: 2.8vh;
+}
+
+a:hover {
+    background-color: rgba(128, 128, 128, 0.7) !important;
+    text-decoration: none;
+}
+
+.menu.scroll-frontpage a {
+    color: white;
+}
+
+.menu.scroll-transitioning a {
+    color: #aaa;
+    background: none;
+}
+
+.menu.scroll-otherpage a {
+    color: #000;
+    background-color: white;
+}
+
+.menu.scroll-transitioning a:hover, 
+.menu.scroll-otherpage a:hover {
+    background-color: rgb(197, 61, 61) !important;
+    color: white;
+    fill: white;
+}
+
+.menu.scroll-transitioning .home,
+.menu.scroll-frontpage .home {
+    visibility: hidden;
+}
+
+.menu .home img {
+    height: 2.5vh;
+    transform: scale(1.3);
+}
+
+.menu .home:hover img {
+    filter: invert(100%);
+}
+
+.menu.scroll-otherpage .home {
+    visibility: visible;
+}

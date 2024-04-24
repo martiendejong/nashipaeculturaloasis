@@ -1,0 +1,74 @@
+<div class="viewheight">
+    <div class="background">
+        <img class="active" src="assets/background.jpeg" />
+        <img />
+        <video>
+        </video>
+    </div>
+    <div class="top-gradient"></div>
+    <div class="bottom-gradient"></div>
+    <div class="foreground">
+        <div class="item" 
+            [style]="{left: -i + '00vw'}" 
+            [class.notransition]="noTransition" 
+            [class.shake]="shake">
+            <div class="itemcontainer" (mousemove)="cycleForegroundActive = false" (mouseout)="cycleForegroundActive = true">
+                <div class="image">
+                    <app-full-img src="assets/bedroom1.jpeg" />
+                </div>
+                <div class="text">
+                    <h1>Western Comfort Level<br/>100% Maasai Experience</h1>
+                    <p>Visit our luxurious accomodation surrounded by the beauty of nature and wildlife.</p>
+                    <p>Owned and operated by Maasai, your stay benefits struggling local families directly.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item" 
+            [style]="{left: -i + '00vw'}" 
+            [class.notransition]="noTransition" 
+            [class.shake]="shake">
+            <div class="itemcontainer" (mousemove)="cycleForegroundActive = false" (mouseout)="cycleForegroundActive = true">
+                <div class="image">
+                    <app-full-img src="assets/safari.jpeg" />
+                </div>
+                <div class="text">
+                    <h1>Personalized Adventures</h1>
+                    <p>Embark on epic safaris and get immersed in local culture.</p>
+                    <p>Witness the real Maasai life and culture beyond the veil of tourism.</p>
+                    <p>The people you meet and the memories that you make will last a lifetime.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item" 
+            [style]="{left: -i + '00vw'}" 
+            [class.notransition]="noTransition" 
+            [class.shake]="shake">
+            <div class="itemcontainer" (mousemove)="cycleForegroundActive = false" (mouseout)="cycleForegroundActive = true">
+                <div class="image">
+                    <app-full-img src="assets/dinner.jpg" />
+                </div>
+                <div class="text">
+                    <h1>Healthy Meals</h1>
+                    <p>Taste original Kenyan foods like Ugali, Nyama Choma or Githeri.</p>
+                    <p>Fill your stomach with our delicious burgers and fries or pizzas.</p>
+                    <p>We will pack you a kings lunch for your trips so you will never get hungry like our children.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item" 
+            [style]="{left: -i + '00vw'}" 
+            [class.notransition]="noTransition" 
+            [class.shake]="shake">
+            <div class="itemcontainer" (mousemove)="cycleForegroundActive = false" (mouseout)="cycleForegroundActive = true">
+                <div class="image">
+                    <app-full-img src="assets/bedroom1.jpeg" />
+                </div>
+                <div class="text">
+                    <h1>Western Comfort Level<br/>100% Maasai Experience</h1>
+                    <p>Visit our luxurious accomodation surrounded by the beauty of nature and wildlife.</p>
+                    <p>Owned and operated by Maasai, your stay benefits struggling local families directly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
