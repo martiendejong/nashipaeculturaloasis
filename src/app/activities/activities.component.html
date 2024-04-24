@@ -1,3 +1,7 @@
 <div class="minviewheight">
-    <p>activities works!</p>
+    <app-carousel-cycle [items]="[{title: 'title'}, {title: 'title2'}]">
+        <ng-template let-item>
+            <h1>{{ item.title }}</h1>
+        </ng-template>
+    </app-carousel-cycle>
 </div>
