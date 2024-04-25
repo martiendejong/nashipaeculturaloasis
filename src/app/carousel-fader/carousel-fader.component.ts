@@ -21,7 +21,7 @@ export class CarouselFaderComponent implements OnInit {
         this.ngZone.run(() => {
           this.cycle();
         });
-      }, 15000);
+      }, 5000);
     });
   }
 
@@ -34,6 +34,6 @@ export class CarouselFaderComponent implements OnInit {
     if(this.fullScreen.isFullScreen || !this.cycleActive) return;
     var next = (this.i + 1) % this.items.length;
     this.i = -1;
-    setTimeout(() => this.i = next, 2500);
+    setTimeout(() => this.i = next, 500);
   }
 }

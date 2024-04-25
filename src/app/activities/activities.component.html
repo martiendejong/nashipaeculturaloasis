@@ -1,115 +1,37 @@
-<div class="viewheight activities">
-    <app-carousel-fader [items]="[
-    {
-        image: 'assets/safari7.jpeg', 
-        title: ['Experience the wild like never before with Nashipae Safari!'],
-        duration: 'whole day',
-        participants: 'up to 8 people',
-        price: '$200 per group',
-        text: 
-        [
-            'Image yourself wakin up before sunrise, hearing the rustling of leaves and feeling the vibrations of elephants marching in the distance.', 
-            'A refreshing breakfast is waiting for you at the dining table, your tour guide is ready to take you straight to the Maasai mara game reserve where the wild animals are waking up as well.',
-            'Armed with a camera and a box packed with snacks you jump into the action. Our seasoned guides grew up in the area and are constantly updating each other so that you don\'t miss a second of what\'s happening!'
-        ]
-    }, {
-        image: 'assets/manata.jpeg', 
-        title: ['Visit next-door manata village and witness Maasai culture first-hand'],
-        participants: 'any group size',
-        duration: '4 hours',
-        price: '$50 per group',
-        text: 
-        [
-            'Walk a few hundred meters from the house and you will step into another world. You will find Maasai people living in houses made of loam, without electricity or even running water.',
-            'During your tour of the village you will encounter cultural practices like the famous jumping greeting, bead making, folk dances and how to make fire.'
-        ]
-    }, {
-        participants: 'any group size',
-        duration: '4 hours',
-        price: '$15 per person with a minimum of $50',
-        image: 'assets/barbecue.jpeg', 
-        title: ['Finish a long day of expeditions with a relaxing Maasai Barbecue'],
-        text: 
-        [
-            'When Maasai have something to celebrate like a wedding or the arrival of high esteemed guests they slaughter a goat or a sheep and have a barbecue.',
-            'Our Maasai men will show you the exact process of slaughering the animal and preparing the traditional Nyama Choma (barbecued meat) and will join you at the campfire or dinner table to explain all about their customs.'
-        ]
-    }, {
-        participants: 'any group size',
-        duration: '4 hours',
-        price: '$20 per group',
-        image: 'assets/hiking.jpeg', 
-        title: ['Hiking Safari'],
-        text: 
-        [
-            'Want to really feel one with nature? Then why not go on a hiking trip? You will see the beauty of nature first hand.',
-        ]                
-    }, {
-        participants: 'any number',
-        duration: '2 hours',
-        price: '$7.50 per person, minimum of $15',
-        image: 'assets/motorcycle.jpeg', 
-        title: ['Explore the town of Oloolaimutia on the back of a motorcycle'],
-        text: 
-        [
-            'Experience how Kenyans travel by sitting on the back of a motorcycle and going to town.',
-        ]                
-    }, {
-        participants: 'any number',
-        duration: '2 hours',
-        price: '$5 per person',
-        image: 'assets/beads.jpeg', 
-        title: ['Learn Maasai beadmaking with Natumi'],
-        text: 
-        [
-            'The Maasai people of Kenya are well known for their traditional handmade beaded jewellery - it has been an important part of Maasai culture for many years.',
-            'Almost daily Maasai women set aside time to work on beaded jewellery like colourful necklaces, bracelets, and pendants.',
-            'Beads also serve as an important source of income for the Maasai. Tourist visiting the Maasai regions in Kenya and northern Tanzania will find many beautiful pieces for sale that make great gifts for women and for men.'
-        ]                
-    }, {
-        participants: 'any number',
-        duration: '4 hours',
-        price: '$7.50 per person, minimum of $15',
-        image: 'assets/beads.jpeg', 
-        title: ['Tour to Natumi\'s place'],
-        text: 
-        [
-            'Natumi is a good friend of our household and caretaker of our herd. Living as a single mother and feeding and caring for three kids is extremely hard in rural Kenya.',
-            'The motorbike takes you to town where you will meet Natumi who will take you on a walk to her house while telling you all about Maasai life'
-        ]                
-    }, {
-        participants: 'any number',
-        duration: '4 hours',
-        price: '$8 per person, minimum of $40',
-        image: 'assets/beads.jpeg', 
-        title: ['Tour of uncle Edward\'s place'],
-        text: 
-        [
-            'Edward is Nashipae\'s uncle who lives a traditional Maasai lifestyle. He owns a piece of land where he has a farm and which he leases out to a safari camp.',
-            'You will be taken on a motorbike to uncle Edward\'s place and wil receive a tour on the property and through the lives of uncle Edward and his family.'
-        ]
-    }]">
+<div class="viewheight">
+    <app-carousel-fader *ngIf="content" [items]="content">
         <ng-template let-item>
-            <div class="center">
-                <div class="itemcontainer">
-                    <div class="image">
-                        <app-full-img [src]="item.image" />
-                    </div>
-                    <div class="text">
-                        <h1>
-                            <ng-container *ngFor="let item of item.title; let last = last">
-                                {{ item }}<br *ngIf="!last" />
-                            </ng-container>                    
-                        </h1>
-                        <div class="info">
-                            <p *ngIf="item.duration" class="small">Duration: {{item.duration}}</p>
-                            <p *ngIf="item.participants" class="small">Participants: {{item.participants}}</p>
-                            <p *ngIf="item.price" class="small">Price: {{item.price}}</p>
+            <div class="activities viewheight" style="background-image: url({{item.image}})">
+                        <div class="text teaser">
+                            <h1>
+                                <ng-container *ngFor="let item of item.teaser; let last = last">
+                                    {{ item }}<br *ngIf="!last" />
+                                </ng-container>                    
+                            </h1>
                         </div>
-                        <p *ngFor="let line of item.text">{{line}}</p>
-                    </div>
-                </div>
             </div>
         </ng-template>
     </app-carousel-fader>
+</div>
+<div class="viewheight activities" *ngFor="let item of content">
+    <div class="center">
+        <div class="itemcontainer">
+            <div class="image">
+                <app-full-img [src]="item.image" />
+            </div>
+            <div class="text">
+                <h1>
+                    <ng-container *ngFor="let item of item.title; let last = last">
+                        {{ item }}<br *ngIf="!last" />
+                    </ng-container>                    
+                </h1>
+                <div class="info">
+                    <p *ngIf="item.duration" class="small">Duration: {{item.duration}}</p>
+                    <p *ngIf="item.participants" class="small">Participants: {{item.participants}}</p>
+                    <p *ngIf="item.price" class="small">Price: {{item.price}}</p>
+                </div>
+                <p *ngFor="let line of item.text">{{line}}</p>
+            </div>
+        </div>
+    </div>
 </div>

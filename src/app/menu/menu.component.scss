@@ -17,7 +17,7 @@ a {
 }
 
 a:hover {
-    background-color: rgba(128, 128, 128, 0.7) !important;
+    background-color: rgba(96, 96, 96) !important;
     text-decoration: none;
 }
 
@@ -62,7 +62,7 @@ a:hover {
 }
 
 .menu.scroll-otherpage .content {
-    box-shadow: 0 0 1vh #00000066;
+    box-shadow: 0 -2px 1vh #00000066;
     display: inline-block;
     padding-top: 2vh;
     padding-bottom: 2vh;

@@ -29,6 +29,20 @@
     overflow: hidden;
 }
 
+.text.teaser {
+  position: absolute;
+  top: 25vh;
+  right: 0;
+  max-width: 50vw;
+  height: auto;
+  min-width: auto;
+  width: auto;
+}
+
+.text.teaser h1 {
+  margin-bottom: 5vh;
+}
+
 .text {
     // box-shadow: 2px 2px 5px #000;
     background-color: #a447;
