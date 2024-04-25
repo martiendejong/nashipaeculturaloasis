@@ -32,11 +32,12 @@ a:hover {
 
 .menu.scroll-otherpage a {
     color: #000;
-    background-color: #ccc;
+    background: linear-gradient(to right bottom, #ddd, #fff, #eee)
 }
 
 .menu.scroll-transitioning a:hover, 
 .menu.scroll-otherpage a:hover {
+    background: none;
     background-color: rgb(197, 61, 61) !important;
     color: white;
     fill: white;
@@ -58,4 +59,15 @@ a:hover {
 
 .menu.scroll-otherpage .home {
     visibility: visible;
+}
+
+.menu.scroll-otherpage .content {
+    box-shadow: 0 0 1vh #00000066;
+    display: inline-block;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.menu.scroll-otherpage {
+    padding: 0;
 }
