@@ -1,3 +1,7 @@
+a.viewheight {
+  display: block;
+}
+
 .activities {
     background-image: url(../../assets/maasai.jpeg);
     background-blend-mode: lighten;
@@ -79,6 +83,8 @@
   padding: 1vh;
   display: inline-block;
   margin-left: -1vh;
+  bottom: 0;
+  position: absolute;
 }
 
   h1 {

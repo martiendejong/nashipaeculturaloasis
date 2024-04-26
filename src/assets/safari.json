@@ -1,5 +1,6 @@
 [
     {
+        "anchor": "nashipaesafari",
         "image": "assets/safari7.jpeg",
         "title": ["Experience the wild like never before with Nashipae Safari!"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
@@ -13,6 +14,7 @@
         ]
     },
     {
+        "anchor": "manatatour",
         "image": "assets/manata.jpeg",
         "title": ["Visit next-door manata village and witness Maasai culture first-hand"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
@@ -25,6 +27,7 @@
         ]
     },
     {
+        "anchor": "maasaibarbecue",
         "participants": "any group size",
         "duration": "4 hours",
         "price": "$15 per person with a minimum of $50",
@@ -37,6 +40,7 @@
         ]
     },
     {
+        "anchor": "hikingsafari",
         "participants": "any group size",
         "duration": "4 hours",
         "price": "$20 per group",
@@ -48,6 +52,7 @@
         ]
     },
     {
+        "anchor": "oloolaimutia",
         "participants": "any number",
         "duration": "2 hours",
         "price": "$7.50 per person, minimum of $15",
@@ -59,6 +64,7 @@
         ]
     },
     {
+        "anchor": "beadmaking",
         "participants": "any number",
         "duration": "2 hours",
         "price": "$5 per person",
@@ -72,6 +78,7 @@
         ]
     },
     {
+        "anchor": "natumi",
         "participants": "any number",
         "duration": "4 hours",
         "price": "$7.50 per person, minimum of $15",
@@ -84,6 +91,7 @@
         ]
     },
     {
+        "anchor": "uncleedward",
         "participants": "any number",
         "duration": "4 hours",
         "price": "$8 per person, minimum of $40",
