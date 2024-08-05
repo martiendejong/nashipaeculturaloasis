@@ -30,9 +30,13 @@ a:hover {
     background: none;
 }
 
+.menu.scroll-otherpage .content {
+    background: linear-gradient(to right bottom, #ddd, #fff, #eee)
+}
+
 .menu.scroll-otherpage a {
     color: #000;
-    background: linear-gradient(to right bottom, #ddd, #fff, #eee)
+    background: transparent;
 }
 
 .menu.scroll-transitioning a:hover, 
