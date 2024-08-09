@@ -31,7 +31,7 @@
         "participants": "any group size",
         "duration": "4 hours",
         "price": "$15 per person with a minimum of $50",
-        "image": "assets/barbecue.jpeg",
+        "image": "assets/African Barbecue",
         "title": ["Finish a long day of expeditions with a relaxing Maasai Barbecue"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "text": [
@@ -44,7 +44,7 @@
         "participants": "any group size",
         "duration": "4 hours",
         "price": "$20 per group",
-        "image": "assets/hiking.jpeg",
+        "image": "assets/Hiking,safari.jpg",
         "title": ["Hiking Safari"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "text": [
@@ -82,7 +82,7 @@
         "participants": "any number",
         "duration": "4 hours",
         "price": "$7.50 per person, minimum of $15",
-        "image": "assets/Natumi.jpg",
+        "image": "assets/NatumiBeadwork.webp",
         "title": ["Tour to Natumi's place"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "text": [
