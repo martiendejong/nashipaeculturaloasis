@@ -15,7 +15,7 @@
     },
     {
         "anchor": "manatatour",
-        "image": "assets/manata.jpeg",
+        "image": "assets/Manataa Village.jpg",
         "title": ["Visit next-door manata village and witness Maasai culture first-hand"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "participants": "any group size",
@@ -56,7 +56,7 @@
         "participants": "any number",
         "duration": "2 hours",
         "price": "$7.50 per person, minimum of $15",
-        "image": "assets/motorcycle.jpeg",
+        "image": "assets/Manataa Village.jpg",
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "title": ["Explore the town of Oloolaimutia on the back of a motorcycle"],
         "text": [
@@ -68,7 +68,7 @@
         "participants": "any number",
         "duration": "2 hours",
         "price": "$5 per person",
-        "image": "assets/beads.jpeg",
+        "image": "assets/African Barbecue",
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "title": ["Learn Maasai beadmaking with Natumi"],
         "text": [
@@ -82,7 +82,7 @@
         "participants": "any number",
         "duration": "4 hours",
         "price": "$7.50 per person, minimum of $15",
-        "image": "assets/NatumiBeadwork.webp",
+        "image": "assets/Manataa Village.jpg",
         "title": ["Tour to Natumi's place"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "text": [
