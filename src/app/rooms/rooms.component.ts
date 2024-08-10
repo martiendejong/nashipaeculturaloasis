@@ -1,11 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { FullImgComponent } from '../full-img/full-img.component';
 import { JsonLoaderService } from '../json-loader.service';
+import { NgFor, NgIf }from '@angular/common';
+
 
 @Component({
   selector: 'app-rooms',
   standalone: true,
-  imports: [FullImgComponent],
+  imports: [FullImgComponent, NgFor, NgIf],
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss', '../page.scss']
 })

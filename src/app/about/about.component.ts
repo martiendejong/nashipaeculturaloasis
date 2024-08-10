@@ -18,7 +18,6 @@ export class AboutComponent {
   constructor(private jsonLoaderService: JsonLoaderService) { }
 
   async ngOnInit() {
-    debugger
     this.content = await this.jsonLoaderService.loadJson(this.src);
   }
 
