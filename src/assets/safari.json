@@ -2,6 +2,7 @@
     {
         "anchor": "nashipaesafari",
         "image": "assets/safari7.jpeg",
+        "sliderImage": "assets/safari7.jpeg",
         "title": ["Experience the wild like never before with Nashipae Safari!"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "duration": "whole day",
@@ -16,6 +17,7 @@
     {
         "anchor": "manatatour",
         "image": "assets/Manataa Village.jpg",
+        "sliderImage": "assets/safari7.jpeg",
         "title": ["Visit next-door manata village and witness Maasai culture first-hand"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "participants": "any group size",
@@ -32,6 +34,7 @@
         "duration": "4 hours",
         "price": "$15 per person with a minimum of $50",
         "image": "assets/African Barbecue",
+        "sliderImage": "assets/safari7.jpeg",
         "title": ["Finish a long day of expeditions with a relaxing Maasai Barbecue"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "text": [
@@ -45,6 +48,7 @@
         "duration": "4 hours",
         "price": "$20 per group",
         "image": "assets/Hiking,safari.jpg",
+        "sliderImage": "assets/safari7.jpeg",
         "title": ["Hiking Safari"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "text": [
@@ -57,6 +61,7 @@
         "duration": "2 hours",
         "price": "$7.50 per person, minimum of $15",
         "image": "assets/Manataa Village.jpg",
+        "sliderImage": "assets/safari7.jpeg",
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "title": ["Explore the town of Oloolaimutia on the back of a motorcycle"],
         "text": [
@@ -69,6 +74,7 @@
         "duration": "2 hours",
         "price": "$5 per person",
         "image": "assets/African Barbecue",
+        "sliderImage": "assets/safari7.jpeg",
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "title": ["Learn Maasai beadmaking with Natumi"],
         "text": [
@@ -83,6 +89,7 @@
         "duration": "4 hours",
         "price": "$7.50 per person, minimum of $15",
         "image": "assets/Manataa Village.jpg",
+        "sliderImage": "assets/safari7.jpeg",
         "title": ["Tour to Natumi's place"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "text": [
@@ -96,6 +103,7 @@
         "duration": "4 hours",
         "price": "$8 per person, minimum of $40",
         "image": "assets/uncle edward.jpg",
+        "sliderImage": "assets/safari7.jpeg",
         "title": ["Tour of uncle Edward's place"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "text": [

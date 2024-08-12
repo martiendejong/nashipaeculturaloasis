@@ -1,7 +1,7 @@
 <div class="viewheight">
     <app-carousel-fader *ngIf="content" [items]="content">
         <ng-template let-item>
-            <a class="activities viewheight" style="background-image: url({{item.image}})" [routerLink]="'/' + item.anchor">
+            <a class="activities viewheight" style="background-image: url({{item.sliderImage}})" [routerLink]="'/' + item.anchor">
                 <div class="text teaser">
                     <h1>
                         <ng-container *ngFor="let item of item.teaser; let last = last">
