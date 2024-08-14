@@ -39,8 +39,4 @@ export class ActivitiesComponent implements OnInit {
         ];
         return classes[index % classes.length];
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b48aa026d6e42e0368936d661ab22b66fb4e7c49
