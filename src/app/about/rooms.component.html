@@ -1,0 +1,13 @@
+<div class="minviewheight">
+    <div class="container" *ngIf="content">
+        <div class="part" *ngFor="let part of content">
+			<div *ngFor="let item of part.items; let last=last">
+				<div>
+					<app-full-img class="{{item.imageClass}}" src="{{item.image}}" />
+                    <p *ngFor="let line of item.text ?? []">{{ line }}</p>
+				</div>
+				<hr *ngIf="!last" />
+			</div>		
+        </div>
+    </div>
+</div>
