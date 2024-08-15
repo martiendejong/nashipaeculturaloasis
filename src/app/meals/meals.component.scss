@@ -4,15 +4,12 @@
     padding-top: 0;
     padding-bottom: 10vh;
     width: calc(100% - 18px);
-    flex-wrap: wrap; /* Allow wrapping of items if necessary */
-    gap: 2vh; /* Add space between items */
 }
 
 .part {
     width: 45%;
     padding-left: 2.5%;
     padding-right: 2.5%;
-    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .part:first-child {
@@ -32,16 +29,12 @@ hr {
 
 .dish {
     display: flex;
-    align-items: center; /* Center items vertically */
-    margin-bottom: 5vh; /* Add space between dishes */
 }
 
 .dish .picture {
     width: 20vh;
     height: 20vh;
     object-fit: cover;
-    border-radius: 25%; /* Apply border-radius */
-    margin-right: 2vh; /* Space between picture and details */
 }
 
 p {
@@ -57,25 +50,23 @@ h1 {
 
 .dish .details {
     flex: 1;
-    padding-left: 3vh;
+    padding-left: 2vh;
 }
 
 .dish .name {
     margin-top: 0;
-    font-size: 3vh;
+    font-size: 3.4vh;
     float: left;
     margin-bottom: 2vh;
 }
 
 .dish .description {
     clear: both;
-    font-size: 2.3vh;
+    font-size: 2.8vh;
 }
 
 .dish .price {
-    font-size: 2vh;
-    font-weight: bold;
-    font-style: italic;
+    font-size: 3.4vh;
     float: right;
     margin-bottom: 0;
 }

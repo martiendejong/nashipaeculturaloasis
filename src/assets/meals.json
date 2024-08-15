@@ -12,14 +12,14 @@
             "description": "Traditional Kenyan dish with maize flour porridge and leaves of nightshade."
           },
           {
-            "image": "../../assets/Ugali, managu and nyama.jpg",
+            "image": "../../assets/Ugal and Nyama Choma.jpg",
             "name": "Ugali Managu Nyama",
             "price": 8,
             "currency": "USD",
             "description": "Traditional Kenyan dish with maize flour porridge, leaves of nightshade and meat."
           },
           {
-            "image": "../../assets/Ugali, managu and nyama.jpg",
+            "image": "../../assets/Ugal and Nyama Choma.jpg",
             "name": "Ugali Managu Sausage",
             "price": 8,
             "currency": "USD",
@@ -33,7 +33,7 @@
             "description": "Traditional Kenyan dish with maize flour porridge, leaves of nightshade and a fried fish."
           },
           {
-            "image": "../../assets/Ugali, managu and nyama.jpg",
+            "image": "../../assets/Ugal and Nyama Choma.jpg",
             "name": "Ugali Managu Nyama Choma",
             "price": 12,
             "currency": "USD",
