@@ -25,7 +25,6 @@ export class ActivitiesComponent implements OnInit {
       this.content = await this.jsonLoaderService.loadJson(this.src);
     }
 
-    // Method to return a specific background class based on the content item
     getBackgroundClass(index: number): string {
         const classes = [
             'activities-one',
