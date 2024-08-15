@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CarouselCycleComponent } from "../carousel-cycle/carousel-cycle.component";
 import { FullImgComponent } from "../full-img/full-img.component";
-import { NgFor, NgIf, NgClass } from "@angular/common";  // Make sure NgClass is imported
+import { NgFor, NgIf, NgClass } from "@angular/common"; 
 import { CarouselFaderComponent } from "../carousel-fader/carousel-fader.component";
 import { JsonLoaderService } from '../json-loader.service';
 import { RouterModule } from '@angular/router';
