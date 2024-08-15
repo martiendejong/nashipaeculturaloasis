@@ -1,4 +1,57 @@
 <div class="minviewheight" *ngIf="content">
-    <h1 *ngFor="let title of content.title">{{title}}</h1>
-    <p *ngFor="let item of content.text">{{item}}</p>
+    <!-- Title Container -->
+    <h1 *ngFor="let title of content.title">{{ title }}</h1>
+
+    <!-- About Description Container -->
+    <p *ngFor="let item of content.text">{{ item }}</p>
+
+    <!-- Main Content Container: Contact Form on the Left, Map on the Right -->
+    <div class="main-content">
+        <!-- Left Side: Contact Form -->
+        <form class="left-side">
+            <!-- Name Fields (First and Last Name on One Line) -->
+            <div class="name-section">
+                <div class="name-field">
+                    <label for="firstName">First Name <span class="required">*</span></label>
+                    <input type="text" id="firstName" name="firstName" placeholder="e.g. first name" required>
+                </div>
+                <div class="name-field">
+                    <label for="lastName">Last Name <span class="required">*</span></label>
+                    <input type="text" id="lastName" name="lastName" placeholder="e.g. last name" required>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="e.g. example@gmail.com" required>
+
+            <!-- Phone -->
+            <label for="phone">Phone <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. +31612345678" required>
+
+            <!-- Subject -->
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="e.g. Subject">
+
+            <!-- Message -->
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="e.g. Your message"></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+
+        <!-- Right Side: Map Container -->
+        <div class="right-side">
+            <iframe
+                src="https://www.google.com/maps?q=1%C2%B035%2755%22S+35%C2%B023%2729%22E&output=embed"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+    </div>
 </div>
