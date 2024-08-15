@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CarouselCycleComponent } from "../carousel-cycle/carousel-cycle.component";
 import { FullImgComponent } from "../full-img/full-img.component";
-import { NgFor, NgIf, NgClass } from "@angular/common"; 
+import { NgFor, NgIf, NgClass } from "@angular/common";  // Make sure NgClass is imported
 import { CarouselFaderComponent } from "../carousel-fader/carousel-fader.component";
 import { JsonLoaderService } from '../json-loader.service';
 import { RouterModule } from '@angular/router';
@@ -25,6 +25,7 @@ export class ActivitiesComponent implements OnInit {
       this.content = await this.jsonLoaderService.loadJson(this.src);
     }
 
+    // Method to return a specific background class based on the content item
     getBackgroundClass(index: number): string {
         const classes = [
             'activities-one',
