@@ -32,16 +32,16 @@ hr {
 
 .dish {
     display: flex;
-    align-items: center; /* Center items vertically */
-    margin-bottom: 5vh; /* Add space between dishes */
+    align-items: center; 
+    margin-bottom: 5vh; 
 }
 
 .dish .picture {
     width: 20vh;
     height: 20vh;
     object-fit: cover;
-    border-radius: 25%; /* Apply border-radius */
-    margin-right: 2vh; /* Space between picture and details */
+    border-radius: 10px; 
+    margin-right: 2vh; 
 }
 
 p {
