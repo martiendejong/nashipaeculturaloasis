@@ -1,0 +1,82 @@
+.container {
+    display: flex;
+    font-size: 2vw;
+    padding-top: 0;
+    padding-bottom: 10vh;
+    width: calc(100% - 18px);
+    flex-wrap: wrap; /* Allow wrapping of items if necessary */
+    gap: 2vh; /* Add space between items */
+}
+
+.part {
+    width: 45%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.part:first-child {
+    border-right: 1px dashed #999;
+}
+
+.full {
+    width: 100%;
+    height: 20vw;
+    display: block;
+    margin-bottom: 5vh !important;
+}
+
+hr {
+    margin-bottom: 5vh;
+}
+
+.dish {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+.dish .picture {
+    width: 20vh;
+    height: 20vh;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 2vh;
+    overflow: hidden;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 5vh;
+}
+
+h1 {
+    font-size: 6vh;
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.dish .details {
+    flex: 1;
+    padding-left: 3vh;
+}
+
+.dish .name {
+    margin-top: 0;
+    font-size: 3vh;
+    float: left;
+    margin-bottom: 2vh;
+}
+
+.dish .description {
+    clear: both;
+    font-size: 2.3vh;
+}
+
+.dish .price {
+    font-size: 2vh;
+    font-weight: bold;
+    font-style: italic;
+    float: right;
+    margin-bottom: 0;
+}
