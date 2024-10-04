@@ -17,6 +17,15 @@
     transition: left ease-in-out 1s;
 }
 
+@media (max-width: 768px) {
+  .item {
+    overflow: hidden !important;
+    // display: block;
+  }
+
+
+}
+
 .shake {
     animation: shake 1.2s linear;
 }
@@ -43,7 +52,7 @@
     100% {
       transform: translateX(0);
     }
-  }  
+  }
 
 .item.notransition {
     transition: none !important;
