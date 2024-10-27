@@ -3,6 +3,7 @@
         "anchor": "nashipaesafari",
         "image": "assets/safari12.jpeg",
         "sliderImage": "assets/Sunset5.jpeg",
+        "backgroundImage": "assets/wildlife ultra.jpg",
         "title": ["Experience the wild like never before with Nashipae Safari!"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "duration": "whole day",
@@ -18,8 +19,9 @@
         "anchor": "manatatour",
         "image": "assets/Manataa Village.jpg",
         "sliderImage": "assets/zebra.jpg",
+        "backgroundImage": "assets/Manataa Village.jpg",
         "title": ["Visit next-door manata village and witness Maasai culture first-hand"],
-        "teaser": ["Experience the wild like never before with Nashipae Safari!"],
+        "teaser": ["Visit next-door manata village and witness Maasai culture first-hand"],
         "participants": "any group size",
         "duration": "4 hours",
         "price": "$50 per group",
@@ -35,8 +37,9 @@
         "price": "$15 per person with a minimum of $50",
         "image": "assets/Choma.jpg",
         "sliderImage": "assets/Sunset4.jpeg",
+        "backgroundImage": "assets/African Barbecue .jpg",
         "title": ["Finish a long day of expeditions with a relaxing Maasai Barbecue"],
-        "teaser": ["Experience the wild like never before with Nashipae Safari!"],
+        "teaser": ["Finish a long day of expeditions with a relaxing Maasai Barbecue"],
         "text": [
             "When Maasai have something to celebrate like a wedding or the arrival of high esteemed guests they slaughter a goat or a sheep and have a barbecue.",
             "Our Maasai men will show you the exact process of slaughtering the animal and preparing the traditional Nyama Choma (barbecued meat) and will join you at the campfire or dinner table to explain all about their customs."
@@ -49,6 +52,7 @@
         "price": "$20 per group",
         "image": "assets/hikingsafari2.jpg",
         "sliderImage": "assets/safari2.jpeg",
+        "backgroundImage": "assets/Sunset4.jpeg",
         "title": ["Hiking Safari"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "text": [
@@ -62,6 +66,7 @@
         "price": "$7.50 per person, minimum of $15",
         "image": "assets/oloolaimutia vilage.jpg",
         "sliderImage": "assets/safari12.jpeg",
+        "backgroundImage": "assets/hikingsafari2.jpg",
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "title": ["Explore the town of Oloolaimutia on the back of a motorcycle"],
         "text": [
@@ -75,6 +80,7 @@
         "price": "$5 per person",
         "image": "assets/kinamama.jpg",
         "sliderImage": "assets/The-Great-Wildebeest-Migration.jpg",
+        "backgroundImage": "assets/Sunset4.jpeg",
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "title": ["Learn Maasai beadmaking with Natumi"],
         "text": [
@@ -90,6 +96,7 @@
         "price": "$7.50 per person, minimum of $15",
         "image": "assets/Natumi house.webp",
         "sliderImage": "assets/wildbeastsmara1.jpeg",
+        "backgroundImage": "assets/Sunset4.jpeg",
         "title": ["Tour to Natumi's place"],
         "teaser": ["Experience the wild like never before with Nashipa Epuo Safaris!"],
         "text": [
@@ -104,6 +111,7 @@
         "price": "$8 per person, minimum of $40",
         "image": "assets/Natumi.jpg",
         "sliderImage": "assets/safari8.jpeg",
+        "backgroundImage": "assets/Sunset4.jpeg",
         "title": ["Tour of uncle Edward's place"],
         "teaser": ["Experience the wild like never before with Nashipae Safari!"],
         "text": [

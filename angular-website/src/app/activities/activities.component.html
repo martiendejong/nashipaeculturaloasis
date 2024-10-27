@@ -1,22 +1,22 @@
 <div class="viewheight">
     <app-carousel-fader *ngIf="content" [items]="content">
         <ng-template let-item let-i="index">
-            <a class="activities viewheight" 
-               [ngClass]="getBackgroundClass(i)" 
-               style="background-image: url({{item.sliderImage}})" 
+            <a class="activities viewheight"
+               style="background-image: url({{item.sliderImage}})"
                [routerLink]="'/' + item.anchor">
                 <div class="text teaser">
                     <h1>
                         <ng-container *ngFor="let text of item.teaser; let last = last">
                             {{ text }}<br *ngIf="!last" />
-                        </ng-container>                    
+                        </ng-container>
                     </h1>
                 </div>
             </a>
         </ng-template>
     </app-carousel-fader>
 </div>
-<div [id]="item.anchor" class="viewheight activities" *ngFor="let item of content; let i = index" [ngClass]="getBackgroundClass(i)">
+<div [id]="item.anchor" class="viewheight activities" *ngFor="let item of content; let i = index" style="background-image: url('{{item.backgroundImage}}')">
+    <img style="display: none;" src="{{item.backgroundImage}}" />
     <div class="center">
         <div class="itemcontainer">
             <div class="image">
@@ -26,7 +26,7 @@
                 <h1>
                     <ng-container *ngFor="let title of item.title; let last = last">
                         {{ title }}<br *ngIf="!last" />
-                    </ng-container>                    
+                    </ng-container>
                 </h1>
                 <p *ngFor="let line of item.text">{{line}}</p>
                 <div class="info">
