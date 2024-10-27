@@ -1,12 +1,12 @@
 #logo {
-  position: fixed;
+  position: absolute;
   z-index: 1000;
   left: 20vw;
   top: 80vh;
   height: 16vh;
 }
 
-@media (max-width: 768px) {
+@media (orientation: portrait) { // max-width: 768px
   #logo {
     left: 10vw;
     top: 80vh;

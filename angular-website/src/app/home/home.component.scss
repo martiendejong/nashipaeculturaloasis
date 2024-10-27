@@ -60,7 +60,7 @@
   display: flex;
 }
 
-@media (max-width: 768px) {
+@media (orientation: portrait) { //max-width: 768px
   .center
   {
     justify-content: flex-start !important;

@@ -15,10 +15,18 @@
         </ng-template>
     </app-carousel-fader>
 </div>
-<div [id]="item.anchor" class="viewheight activities" *ngFor="let item of content; let i = index" style="background-image: url('{{item.backgroundImage}}')">
-    <img style="display: none;" src="{{item.backgroundImage}}" />
+<div [id]="item.anchor" class="viewheight activities activity-descriptions" *ngFor="let item of content; let i = index" style="background-image: url('{{item.backgroundImage}}')">
+  <!-- <img style="display: none;" src="{{item.backgroundImage}}" /> -->
     <div class="center">
         <div class="itemcontainer">
+            <div  class="mobile-only" style="background-color: white;" >
+                <h1>
+                    <ng-container *ngFor="let title of item.title; let last = last">
+                        {{ title }}<br *ngIf="!last" />
+                    </ng-container>
+                </h1>
+            </div>
+
             <div class="image">
                 <app-full-img [src]="item.image" />
             </div>
@@ -37,4 +45,6 @@
             </div>
         </div>
     </div>
+    <app-full-img class="mobile-only" [src]="item.backgroundImage" />
+
 </div>

@@ -74,6 +74,9 @@ p {
     float: none !important;
     margin: 0 !important;
   }
+  ::ng-deep app-full-img img {
+    max-height: 35vh;
+  }
   p {
     font-size: 5vw;
     margin-left: 2vw;
