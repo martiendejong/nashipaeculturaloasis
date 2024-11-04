@@ -70,3 +70,32 @@ p {
     margin-top: 0;
     margin-bottom: 5vh;
 }
+
+
+@media (orientation: portrait) or (max-width: 768px)
+{
+  .container {
+    display: block;
+    width: 100%;
+    padding-top: 0;
+  }
+  .part {
+    width: 100%;
+    display: block;
+    padding: 0;
+  }
+  app-full-img {
+    height: 100% !important;
+    border-radius: 0 !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+  ::ng-deep app-full-img img {
+    max-height: 35vh;
+  }
+  p {
+    font-size: 5vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
