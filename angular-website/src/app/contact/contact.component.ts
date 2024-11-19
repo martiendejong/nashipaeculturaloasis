@@ -19,4 +19,7 @@ export class ContactComponent {
     this.content = await this.jsonLoaderService.loadJson(this.src);
   }
 
+  submitForm() {
+    debugger;
+  }
 }

@@ -1,3 +1,6 @@
 node_modules
 .angular
 dist
+embeddings.json
+embeddings.json.b2
+embeddings.json.b3
