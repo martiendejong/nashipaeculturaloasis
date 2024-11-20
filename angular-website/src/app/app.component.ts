@@ -63,6 +63,10 @@ export class AppComponent implements OnInit {
               setTimeout(() => this.isNavigating = false, 3000);
             }
           }
+          else
+          {
+            this.isNavigating = false;
+          }
         }, 100);
         this.isInitialNavigation = false;
         return;
