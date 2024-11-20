@@ -1,8 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Scroll } from '../scroll.service';
-import { RouterModule, provideRouter } from '@angular/router';
-import { routes } from '../app.routes';
-import { NgFor, NgIf }from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { NgFor, NgIf } from '@angular/common';
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-menu',
@@ -22,8 +22,8 @@ export class MenuComponent implements OnInit {
   ];
   public selectedLanguage = { code: 'en', name: 'English' };
 
-  constructor(public scroll: Scroll) {
-    //this.selectedLanguage = 'en';// navigator !== undefined ? navigator.language.slice(0, 2) : 'en';
+  constructor(public scroll: Scroll, private languageService: LanguageService) {
+    this.languageService.currentLanguage.subscribe(language => this.selectedLanguage = language);
   }
 
   ngOnInit(): void {
@@ -42,6 +42,6 @@ export class MenuComponent implements OnInit {
   changeLanguage(language: any) {
     this.selectedLanguage = language;
     this.showLanguageMenu = false;
-    // Logic to change the language settings goes here.
+    this.languageService.changeLanguage(language);
   }
 }
