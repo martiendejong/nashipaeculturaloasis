@@ -4,8 +4,8 @@
         "image": "assets/safari12.jpeg",
         "sliderImage": "assets/Sunset5.jpeg",
         "backgroundImage": "assets/wildlife ultra.jpg",
-        "title": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!
-        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!
+        "title": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!"],
+        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!"],
         "duration": "toute la journée",
         "participants": "jusqu'à 8 personnes",
         "price": "200 $ par groupe",
@@ -54,7 +54,7 @@
         "sliderImage": "assets/safari2.jpeg",
         "backgroundImage": "assets/Sunset4.jpeg",
         "title": ["Safari Randonnée"],
-        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!
+        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!"],
         "text": [
             "Vous voulez vraiment vous sentir en osmose avec la nature? Pourquoi ne pas partir en randonnée? Vous verrez la beauté de la nature de près."
         ]
@@ -67,7 +67,7 @@
         "image": "assets/oloolaimutia vilage.jpg",
         "sliderImage": "assets/safari12.jpeg",
         "backgroundImage": "assets/hikingsafari2.jpg",
-        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!
+        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!"],
         "title": ["Explorez la ville d'Oloolaimutia à l'arrière d'une moto"],
         "text": [
             "Découvrez comment les Kenyans voyagent en vous asseyant à l'arrière d'une moto et en allant en ville."
@@ -81,7 +81,7 @@
         "image": "assets/kinamama.jpg",
         "sliderImage": "assets/The-Great-Wildebeest-Migration.jpg",
         "backgroundImage": "assets/Sunset4.jpeg",
-        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!
+        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!"],
         "title": ["Apprenez la fabrication de perles Maasai avec Natumi"],
         "text": [
             "Les Maasai du Kenya sont bien connus pour leurs bijoux en perles traditionnels faits à la main - cela fait partie intégrante de la culture Maasai depuis de nombreuses années.",
@@ -98,7 +98,7 @@
         "sliderImage": "assets/wildbeastsmara1.jpeg",
         "backgroundImage": "assets/Sunset4.jpeg",
         "title": ["Excursion chez Natumi"],
-        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!
+        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!"],
         "text": [
             "Natumi est une bonne amie de notre foyer et gardienne de notre troupeau. Vivre en tant que mère célibataire et nourrir et prendre soin de trois enfants est extrêmement difficile dans le Kenya rural.",
             "La moto vous emmène en ville où vous rencontrerez Natumi qui vous emmènera en promenade jusqu'à sa maison tout en vous parlant de la vie Maasai."
@@ -113,7 +113,7 @@
         "sliderImage": "assets/safari8.jpeg",
         "backgroundImage": "assets/Sunset4.jpeg",
         "title": ["Tour du site de l'oncle Edward"],
-        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!
+        "teaser": ["Vivez la nature comme jamais auparavant avec Nashipae Safari!"],
         "text": [
             "Edward est l'oncle de Nashipae qui vit un style de vie traditionnel Maasai. Il possède un terrain où il a une ferme et qu'il loue à un camp de safari.",
             "Vous serez emmené à moto chez l'oncle Edward et recevrez une visite guidée de la propriété et à travers les vies de l'oncle Edward et de sa famille."
