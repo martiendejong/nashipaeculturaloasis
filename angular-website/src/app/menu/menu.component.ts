@@ -14,6 +14,7 @@ import { LanguageService } from '../language.service';
 })
 export class MenuComponent implements OnInit {
   public showLanguageMenu: boolean = false;
+  public showMobileMenu: boolean = false;
   public languages = [
     { code: 'en', name: 'English' },
     { code: 'nl', name: 'Nederlands' },
@@ -37,6 +38,10 @@ export class MenuComponent implements OnInit {
 
   toggleLanguageMenu() {
     this.showLanguageMenu = !this.showLanguageMenu;
+  }
+
+  toggleMobileMenu() {
+    this.showMobileMenu = !this.showMobileMenu;
   }
 
   changeLanguage(language: any) {
