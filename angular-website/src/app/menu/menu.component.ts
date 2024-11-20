@@ -16,13 +16,14 @@ export class MenuComponent implements OnInit {
   public showLanguageMenu: boolean = false;
   public languages = [
     { code: 'en', name: 'English' },
-    { code: 'fr', name: 'French' },
-    { code: 'de', name: 'German' }
+    { code: 'nl', name: 'Nederlands' },
+    { code: 'fr', name: 'Francais' },
+    { code: 'de', name: 'Deutsch' }
   ];
-  public selectedLanguage: string;
+  public selectedLanguage = { code: 'en', name: 'English' };
 
   constructor(public scroll: Scroll) {
-    this.selectedLanguage = 'en';// navigator !== undefined ? navigator.language.slice(0, 2) : 'en';
+    //this.selectedLanguage = 'en';// navigator !== undefined ? navigator.language.slice(0, 2) : 'en';
   }
 
   ngOnInit(): void {
@@ -38,8 +39,8 @@ export class MenuComponent implements OnInit {
     this.showLanguageMenu = !this.showLanguageMenu;
   }
 
-  changeLanguage(languageCode: string) {
-    this.selectedLanguage = languageCode;
+  changeLanguage(language: any) {
+    this.selectedLanguage = language;
     this.showLanguageMenu = false;
     // Logic to change the language settings goes here.
   }

@@ -3,10 +3,10 @@
 </div>
 <img id="logo" src="assets/nashipae.svg" />
 <div class="language-selector">
-  <img class="flag-icon" src="assets/flag.svg" alt="Flag Icon" (click)="toggleLanguageMenu()" />
+  <img class="flag-icon" src="assets/flag-{{selectedLanguage.code}}.png" alt="Flag Icon" (click)="toggleLanguageMenu()" />
   <div class="language-menu" *ngIf="showLanguageMenu">
-    <div *ngFor="let language of languages" (click)="changeLanguage(language.code)">
-      {{ language.name }}
+    <div *ngFor="let language of languages">
+      <img *ngIf="language.code != selectedLanguage.code" src="assets/flag-{{language.code}}.png" alt="Flag Icon" (click)="changeLanguage(language)" />
     </div>
   </div>
 </div>

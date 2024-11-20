@@ -123,8 +123,6 @@ a:hover {
   right: 10px;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  background-color: white;
   cursor: pointer;
   z-index: 1000;
 }
@@ -134,22 +132,28 @@ a:hover {
 }
 
 .language-menu {
-  position: absolute;
+  position: fixed;
   top: 60px;
-  right: 10px;
-  background-color: white;
-  border: 1px solid #ccc;
+  right: 0px;
   padding: 5px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   z-index: 1000;
 }
 
-.language-menu div {
-  padding: 5px;
+.language-menu img {
+  width: 50px;
+  height: 50px;
   cursor: pointer;
+  z-index: 1000;
+  margin: 5px;
 }
 
-.language-menu div:hover {
-  background-color: #f0f0f0;
+.language-menu div {
+  cursor: pointer;
+  display: inline;
+}
+
+.flag-icon:hover,
+.language-menu img:hover {
+  filter: brightness(1.3);
 }
