@@ -1,5 +1,5 @@
-import { Component, ElementRef, HostListener, Inject, PLATFORM_ID } from '@angular/core';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { Component, ElementRef, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ActivitiesComponent } from './activities/activities.component';
@@ -11,6 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { Scroll } from './scroll.service';
 import { filter } from 'rxjs';
 import { ViewportScroller, Location, PlatformLocation, isPlatformBrowser } from '@angular/common';
+import { LanguageService } from './language.service';
 
 @Component({
   selector: 'app-root',
@@ -20,18 +21,31 @@ import { ViewportScroller, Location, PlatformLocation, isPlatformBrowser } from 
   styleUrl: './app.component.scss',
   providers: [Scroll]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   isNavigating = true;
   isInitialNavigation = true;
 
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      let lang = params['lang'];
+      if (!lang) {
+        const browserLang = typeof navigator !== 'undefined' ? navigator.language.slice(0, 2) : 'en';
+        lang = ['en', 'fr', 'de', 'nl'].includes(browserLang) ? browserLang : 'en';
+      }
+      this.languageService.changeLanguage({ code: lang, name: '' }); // The name can be fetched or mapped appropriately
+    });
+  }
+
   constructor(
-    private scroll: Scroll, 
-    public router: Router, 
-    private viewportScroller: ViewportScroller, 
-    private elementRef: ElementRef, 
-    private location: Location, 
+    private scroll: Scroll,
+    public router: Router,
+    private viewportScroller: ViewportScroller,
+    private elementRef: ElementRef,
+    private location: Location,
     private platformLocation: PlatformLocation,
-    @Inject(PLATFORM_ID) private platformId: Object) { 
+    private languageService: LanguageService,
+    private route: ActivatedRoute,
+    @Inject(PLATFORM_ID) private platformId: Object) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event) => {
@@ -47,8 +61,8 @@ export class AppComponent {
               this.isNavigating = true;
               element.scrollIntoView();
               setTimeout(() => this.isNavigating = false, 3000);
-            }            
-          }  
+            }
+          }
         }, 100);
         this.isInitialNavigation = false;
         return;
@@ -60,7 +74,7 @@ export class AppComponent {
       else
         setTimeout(() => this.viewportScroller.scrollToAnchor(anchor), 100);
       setTimeout(() => this.isNavigating = false, 3000);
-    });    
+    });
   }
 
   @HostListener('window:scroll', ['$event'])
