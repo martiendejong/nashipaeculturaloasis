@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FullImgComponent } from '../full-img/full-img.component';
 import { JsonLoaderService } from '../json-loader.service';
+import { Subscription } from 'rxjs';
+import { LanguageService } from '../language.service';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({
@@ -10,19 +12,31 @@ import { NgFor, NgIf } from '@angular/common';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss', '../page.scss']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, OnDestroy {
 
   @Input() src: string = '../../assets/about.json';
 
-  public content: any[] = [];  // Ensure content is an array
+  public content: any[] = [];
+  private languageSubscription: Subscription;
 
-  constructor(private jsonLoaderService: JsonLoaderService) { }
+  constructor(private jsonLoaderService: JsonLoaderService, private languageService: LanguageService) {
+    this.languageSubscription = this.languageService.currentLanguage.subscribe(async language => {
+      this.src = `assets/about.${language.code}.json`;
+      this.content = await this.jsonLoaderService.loadJson(this.src);
+    });
+  }
 
   async ngOnInit() {
     try {
       this.content = await this.jsonLoaderService.loadJson(this.src);
     } catch (error) {
       console.error('Error loading JSON:', error);
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
     }
   }
 }
