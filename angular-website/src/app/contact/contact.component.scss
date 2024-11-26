@@ -61,7 +61,7 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 1rem;
-    width: 100%;
+    width: 90%;
 }
 
 textarea {
@@ -88,4 +88,14 @@ textarea {
 
 .submit-button:hover {
     background-color: darkblue;
+}
+
+@media (orientation: portrait) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .main-content > * {
+    width: 100%;
+  }
 }
