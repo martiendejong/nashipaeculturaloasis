@@ -18,6 +18,9 @@ export class ContactComponent implements OnInit, OnDestroy {
   public content: any;
   public csrfToken: string = '';
   private languageSubscription: Subscription;
+  public baseUrl: string = '';
+
+  public loading: boolean = false;
 
   constructor(
     private jsonLoaderService: JsonLoaderService,
@@ -42,7 +45,7 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   async fetchCsrfToken() {
     try {
-      const response = await axios.get<{ token: string }>('/csrf-token.php');
+      const response = await axios.get<{ token: string }>(`${this.baseUrl}/csrf-token.php`);
       this.csrfToken = response.data.token;
     } catch (error) {
       console.error('Error fetching CSRF token:', error);
@@ -50,6 +53,8 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   async submitForm() {
+    this.loading = true;
+
     const formData = new FormData();
     formData.append('firstName', (document.getElementById('firstName') as HTMLInputElement).value);
     formData.append('lastName', (document.getElementById('lastName') as HTMLInputElement).value);
@@ -60,10 +65,14 @@ export class ContactComponent implements OnInit, OnDestroy {
     formData.append('csrf_token', this.csrfToken);
 
     try {
-      const response = await axios.post('/contact.php', formData);
+      const response = await axios.post(`${this.baseUrl}/contact.php`, formData);
       console.log('Form submitted successfully:', response.data);
+      alert('Your message has been sent. Thank you for contacting us.');
     } catch (error) {
       console.error('Error submitting form:', error);
+      alert('There was an error sending your message. Please contact us directly by email or on whatsapp.');
     }
+
+    this.loading = false;
   }
 }

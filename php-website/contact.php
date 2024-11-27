@@ -1,34 +1,72 @@
 <?php
+
 session_start();
 
-// Function to validate CSRF token
+require 'config.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+require 'PHPMailer/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 function validateCsrfToken($token) {
     return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
 }
 
-// Retrieve and decode the incoming JSON payload
-$input = json_decode(file_get_contents('php://input'), true);
+//$input = json_decode(file_get_contents('php://input'), true);
+$input = $_POST;
 
-// Validate CSRF token
-if (!validateCsrfToken($input['csrfToken'] ?? '')) {
-    http_response_code(403); // Forbidden
+if (!validateCsrfToken($input['csrf_token'] ?? '')) {
+    http_response_code(403);
     echo json_encode(['error' => 'Invalid CSRF token']);
     exit;
 }
 
-// Validate other inputs (e.g., name, email, message)
-$name = filter_var($input['name'], FILTER_SANITIZE_STRING);
+$firstName = htmlspecialchars(filter_var($input['firstName']));
+$lastName = htmlspecialchars(filter_var($input['lastName']));
 $email = filter_var($input['email'], FILTER_VALIDATE_EMAIL);
-$message = filter_var($input['message'], FILTER_SANITIZE_STRING);
+$message = htmlspecialchars(filter_var($input['message']));
 
-if (!$name || !$email || !$message) {
+if (!$firstName || !$email || !$message) {
     http_response_code(400); // Bad Request
     echo json_encode(['error' => 'Invalid input']);
     exit;
 }
 
-// Process the form (e.g., send an email)
-mail('you@example.com', 'New Contact Form Submission', $message, "From: $email");
+$mail = new PHPMailer(true);
 
-echo json_encode(['success' => 'Message sent successfully']);
+try {
+    $mail->isSMTP();
+    $mail->Host = 'mail.nashipaeculturaloasis.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = $emailConfig->username;
+    $mail->Password = $emailConfig->password;
+    // $mail->Username = 'info@nashipaeculturaloasis.com';
+    // $mail->Password = 'jSYPcFxAugft6EgWsZxZ';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    $mail->setFrom('info@nashipaeculturaloasis.com', 'Nashipae Cultural Oasis');
+    $mail->addAddress('sofynashipae@gmail.com', 'Sofy Nashipae');
+    $mail->addAddress('martiendejong2008@gmail.com', 'Martien de Jong');
+
+    $name = $firstName . ' ' . $lastName;
+
+    $mail->isHTML(true);
+    $mail->Subject = 'New Contact Form Submission';
+    $mail->Body    = "
+        <h1>Contact Form Submission</h1>
+        <p><strong>Name:</strong> $name</p>
+        <p><strong>Email:</strong> $email</p>
+        <p><strong>Message:</strong><br>$message</p>
+    ";
+    $mail->AltBody = "Name: $name\nEmail: $email\nMessage:\n$message";
+
+    $mail->send();
+    echo json_encode(['success' => 'Message sent successfully']);
+} catch (Exception $e) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo]);
+}
 ?>
