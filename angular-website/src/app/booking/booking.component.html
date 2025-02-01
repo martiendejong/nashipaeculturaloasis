@@ -1,31 +1,12 @@
-<div class="booking-container" *ngIf="content">
-    <h1 class="booking-title">Make a Booking at Nashipae Cultural Oasis</h1>
-    <p *ngFor="let item of content.text">{{ item }}</p>
-  
-    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
-      <label for="startDate">Start Date:</label>
-      <input type="date" id="startDate" formControlName="startDate" (change)="onStartDateChange()">
-      <div class="error" *ngIf="bookingForm.get('startDate')?.invalid && bookingForm.get('startDate')?.touched">Start date is required.</div>
-  
-      <label for="endDate">End Date:</label>
-      <input type="date" id="endDate" formControlName="endDate" [min]="minEndDate">
-      <div class="error" *ngIf="bookingForm.get('endDate')?.invalid && bookingForm.get('endDate')?.touched">End date is required.</div>
-  
-      <label for="rooms">Rooms:</label>
-      <select id="rooms" formControlName="rooms">
-        <option value="1">1 Bedroom</option>
-        <option value="2">2 Bedrooms</option>
-        <option value="3">3 Bedrooms</option>
-      </select>
-      <div class="error" *ngIf="bookingForm.get('rooms')?.invalid && bookingForm.get('rooms')?.touched">Please select a room.</div>
-  
-      <label>
-        <input type="checkbox" formControlName="privateChef"> Include Private Chef
-      </label>
-  
-      <button type="submit">Book Now</button>
-    </form>
-  
-    <p class="success-message" *ngIf="successMessage">{{ successMessage }}</p>
-    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+<div class="booking-container">
+  <h1 class="heading">{{ heading }}</h1>
+  <div class="plans">
+    <div class="plan" *ngFor="let plan of plans">
+      <h2 class="plan-title">{{ plan.title }}</h2>
+      <p class="plan-description">{{ plan.description }}</p>
+      <ul class="plan-features">
+        <li *ngFor="let feature of plan.features">{{ feature }}</li>
+      </ul>
+    </div>
   </div>
+</div>

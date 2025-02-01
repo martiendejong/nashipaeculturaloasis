@@ -1,73 +1,62 @@
-// booking.component.ts
-import { Component, Input, OnDestroy } from '@angular/core';
-import { JsonLoaderService } from '../json-loader.service';
-import { Subscription } from 'rxjs';
-import { LanguageService } from '../language.service';
-import { CommonModule, NgFor } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-booking',
   standalone: true,
-  imports: [CommonModule, NgFor, ReactiveFormsModule],
+  imports: [CommonModule],
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.scss', '../page.scss']
 })
-export class BookingComponent implements OnDestroy {
-  @Input() src: any;
+export class BookingComponent {
+  @Input() src?: string;  // Added so that [src] binding is recognized
 
-  public content: any;
-  private languageSubscription: Subscription;
+  heading = 'Make a Booking at Nashipae Cultural Oasis';
 
-  bookingForm: FormGroup;
-  minEndDate: string | null = null;
-  successMessage: string = '';
-  errorMessage: string = '';
+  plans = [
+    {
+      title: 'Basic Plan',
+      description: 'Includes;',
+      features: [
+        'Free WiFi',
+        '4x6 Bed',
+        'Hot Shower',
+        'Breakfast'
+      ]
+    },
+    {
+      title: 'Standard Plan',
+      description: 'Includes;',
+      features: [
+        'Free WiFi',
+        '5x6 Bed',
+        'Hot Shower',
+        'Breakfast',
+      ]
+    },
+    {
+      title: 'Premium Plan',
+      description: 'Includes;',
+      features: [
+        'Free WiFi',
+        'King-size Bed (6x6)',
+        'Hot Shower',
+        'Breakfast',
+        'Lunch + Dinner',
+        'Laundry'
 
-  constructor(
-    private jsonLoaderService: JsonLoaderService,
-    private languageService: LanguageService,
-    private fb: FormBuilder
-  ) {
-    this.languageSubscription = this.languageService.currentLanguage.subscribe(async language => {
-      this.src = `assets/booking.${language.code}.json`;
-      this.content = await this.jsonLoaderService.loadJson(this.src);
-    });
-
-    this.bookingForm = this.fb.group({
-      startDate: [null, Validators.required],
-      endDate: [null, Validators.required],
-      rooms: ['3', Validators.required],
-      privateChef: [false],
-    });
-  }
-
-  async ngOnInit() {
-    this.content = await this.jsonLoaderService.loadJson(this.src);
-  }
-
-  onStartDateChange() {
-    const startDate = this.bookingForm.get('startDate')?.value;
-    if (startDate) {
-      this.minEndDate = startDate;
-      this.bookingForm.get('endDate')?.setValue(null);
+      ]
+    },
+    {
+      title: 'Full House',
+      description: 'Includes;',
+      features: [
+        'All three bedrooms',
+        'Kitchen',
+        'Seating Area',
+        'Dining Area',
+        'All Premium features'
+      ]
     }
-  }
-
-  onSubmit() {
-    if (this.bookingForm.valid) {
-      this.successMessage = 'Booking confirmed!';
-      this.errorMessage = '';
-      this.bookingForm.reset();
-    } else {
-      this.successMessage = '';
-      this.errorMessage = 'Please fill in all required fields before booking.';
-    }
-  }
-
-  ngOnDestroy() {
-    if (this.languageSubscription) {
-      this.languageSubscription.unsubscribe();
-    }
-  }
+  ];
 }

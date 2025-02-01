@@ -1,65 +1,87 @@
-// booking.component.scss
+/* Full-page container with a gradient background */
 .booking-container {
-    max-width: 700px;
-    margin: auto;
-    padding: 30px;
-    background: #f8f8f8;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .booking-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input, select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    background: #007bff;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background: #0056b3;
-  }
-  
-  .success-message {
-    color: green;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .error-message {
-    color: red;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .error {
-    color: red;
-    font-size: 12px;
-    margin-top: -10px;
-  }
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  background: linear-gradient(to bottom, #000033, #87ceeb); /* Dark at top to sky blue at bottom */
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Heading styles */
+.heading {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Grid of plan boxes */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Individual plan box */
+.plan {
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left; /* Align text to the left */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+/* Hover effect: scale up and add extra shadow */
+.plan:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Plan title */
+.plan-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+/* Plan description */
+.plan-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Features list with tick icons */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.plan-features li {
+  margin: 5px 0;
+  padding-left: 25px; /* Space for the tick */
+  position: relative;
+}
+
+/* Use a tick icon (Unicode checkmark) positioned on the left */
+.plan-features li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: green;
+  font-size: 1rem;
+}
