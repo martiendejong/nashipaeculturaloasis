@@ -1,14 +1,35 @@
-<div class="minviewheight" *ngIf="content">
-    <h1>{{ content.title }}</h1>
-    <div class="container">
-        <div class="part" *ngFor="let category of content.container">
-            <h2>{{ category.category }}</h2>
-            <div class="dish" *ngFor="let dish of category.dishes">
-                <app-full-img class="picture" [src]="dish.image"></app-full-img>
-                <div class="details">
-                    <h3 class="name">{{ dish.name }}</h3>
-                    <p class="price">{{ dish.currency }} {{ dish.price }}</p>
-                    <p class="description">{{ dish.description }}</p>
+<div class="minviewheight">
+    <!-- Loading Spinner -->
+    <div *ngIf="!content" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+
+    <!-- Content -->
+    <div *ngIf="content">
+        <h1>{{ content.title }}</h1>
+        <div class="container">
+            <div class="category" *ngFor="let category of content.container" [ngClass]="{'kenyan-dishes': category.category === 'Kenyan Dishes'}">
+                <h2 class="category-title">{{ category.category }}</h2>
+                <div class="dish-grid">
+                    <div class="dish-card" *ngFor="let dish of category.dishes">
+                        <div class="image-container">
+                            <app-full-img class="picture" [src]="dish.image"></app-full-img>
+                            <div class="overlay">
+                                <p class="overlay-text">Explore More</p>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <h3 class="name">{{ dish.name }}</h3>
+                            <p class="price">{{ dish.currency }} {{ dish.price }}</p>
+                            <p class="description">{{ dish.description }}</p>
+                            <button class="order-button">Order Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

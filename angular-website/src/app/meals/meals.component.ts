@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FullImgComponent } from "../full-img/full-img.component";
 import { JsonLoaderService } from '../json-loader.service';
 import { NgFor, NgIf } from '@angular/common';
@@ -12,21 +12,32 @@ import { Subscription } from 'rxjs';
     styleUrls: ['./meals.component.scss', '../page.scss'],
     imports: [FullImgComponent, NgIf, NgFor]
 })
-export class MealsComponent implements OnDestroy {
+export class MealsComponent implements OnInit {
     @Input() src: any;
 
     public content: any;
+    public errorMessage: string = '';
     private languageSubscription: Subscription;
-  
+
     constructor(private jsonLoaderService: JsonLoaderService, private languageService: LanguageService) {
         this.languageSubscription = this.languageService.currentLanguage.subscribe(async language => {
             this.src = `assets/meals.${language.code}.json`;
-            this.content = await this.jsonLoaderService.loadJson(this.src);
+            try {
+                this.content = await this.jsonLoaderService.loadJson(this.src);
+            } catch (error) {
+                this.errorMessage = 'Failed to load meals. Please try again later.';
+                console.error('Error loading JSON:', error);
+            }
         });
     }
-  
+
     async ngOnInit() {
-        this.content = await this.jsonLoaderService.loadJson(this.src);
+        try {
+            this.content = await this.jsonLoaderService.loadJson(this.src);
+        } catch (error) {
+            this.errorMessage = 'Failed to load meals. Please try again later.';
+            console.error('Error loading JSON:', error);
+        }
     }
 
     ngOnDestroy() {

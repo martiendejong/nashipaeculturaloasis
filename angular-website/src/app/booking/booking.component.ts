@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.scss', '../page.scss']
+  styleUrls: ['./booking.component.scss']
 })
 export class BookingComponent {
   @Input() src?: string;  // Added so that [src] binding is recognized
@@ -44,7 +44,6 @@ export class BookingComponent {
         'Breakfast',
         'Lunch + Dinner',
         'Laundry'
-
       ]
     },
     {

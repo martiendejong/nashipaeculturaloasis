@@ -10,7 +10,6 @@
   align-items: center;
 }
 
-
 /* Heading styles */
 .heading {
   font-size: 2.5rem;
@@ -84,4 +83,22 @@
   top: 0;
   color: green;
   font-size: 1rem;
+}
+
+/* Button styling */
+.plan-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.plan-button:hover {
+  background-color: #0056b3;
 }
