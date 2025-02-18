@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FullImgComponent } from "../full-img/full-img.component";
 import { JsonLoaderService } from '../json-loader.service';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgClass } from '@angular/common'; // Add NgClass here
 import { LanguageService } from '../language.service';
 import { Subscription } from 'rxjs';
 
@@ -10,12 +10,15 @@ import { Subscription } from 'rxjs';
     standalone: true,
     templateUrl: './meals.component.html',
     styleUrls: ['./meals.component.scss', '../page.scss'],
-    imports: [FullImgComponent, NgIf, NgFor]
+    imports: [FullImgComponent, NgIf, NgFor, NgClass] // Add NgClass here
 })
 export class MealsComponent implements OnInit {
     @Input() src: any;
 
     public content: any;
+    public categories: string[] = ['Breakfast', 'Lunch', 'Dinner'];
+    public selectedCategory: string = 'Breakfast';
+    public filteredContainer: any[] = [];
     public errorMessage: string = '';
     private languageSubscription: Subscription;
 
@@ -24,6 +27,7 @@ export class MealsComponent implements OnInit {
             this.src = `assets/meals.${language.code}.json`;
             try {
                 this.content = await this.jsonLoaderService.loadJson(this.src);
+                this.filterByCategory(this.selectedCategory);
             } catch (error) {
                 this.errorMessage = 'Failed to load meals. Please try again later.';
                 console.error('Error loading JSON:', error);
@@ -34,9 +38,23 @@ export class MealsComponent implements OnInit {
     async ngOnInit() {
         try {
             this.content = await this.jsonLoaderService.loadJson(this.src);
+            this.filterByCategory(this.selectedCategory);
         } catch (error) {
             this.errorMessage = 'Failed to load meals. Please try again later.';
             console.error('Error loading JSON:', error);
+        }
+    }
+
+    selectCategory(category: string) {
+        this.selectedCategory = category;
+        this.filterByCategory(category);
+    }
+
+    filterByCategory(category: string) {
+        if (this.content && this.content.container) {
+            this.filteredContainer = this.content.container.filter((cat: any) => 
+                cat.category.toLowerCase() === category.toLowerCase()
+            );
         }
     }
 

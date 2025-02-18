@@ -24,6 +24,8 @@ import { LanguageService } from './language.service';
 export class AppComponent implements OnInit {
   isNavigating = true;
   isInitialNavigation = true;
+  isMenuOpen = false; // Added from the second snippet
+  isScrolled = false; // Added from the second snippet
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -79,6 +81,17 @@ export class AppComponent implements OnInit {
         setTimeout(() => this.viewportScroller.scrollToAnchor(anchor), 100);
       setTimeout(() => this.isNavigating = false, 3000);
     });
+  }
+
+  // Toggle mobile menu - Added from the second snippet
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  // Add background color on scroll - Added from the second snippet
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
   }
 
   @HostListener('window:scroll', ['$event'])

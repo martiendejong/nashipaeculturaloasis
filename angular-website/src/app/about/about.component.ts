@@ -20,9 +20,9 @@ export class AboutComponent implements OnInit, OnDestroy {
   private languageSubscription: Subscription;
 
   constructor(private jsonLoaderService: JsonLoaderService, private languageService: LanguageService) {
-    this.languageSubscription = this.languageService.currentLanguage.subscribe(async language => {
-      this.src = `assets/about.${language.code}.json`;
-      this.content = await this.jsonLoaderService.loadJson(this.src);
+    this.languageSubscription = this.languageService.currentLanguage.subscribe(language => {
+      this.src = `../../assets/about.${language.code}.json`; // Fixed string interpolation
+      this.jsonLoaderService.loadJson(this.src).then(content => this.content = content);
     });
   }
 

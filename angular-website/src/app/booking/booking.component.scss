@@ -1,95 +1,69 @@
-/* Full-page container with a gradient background */
+/* Full-page container */
 .booking-container {
   width: 100%;
-  min-height: 100vh; /* Full viewport height */
-  background: linear-gradient(to bottom, #000033, #87ceeb); /* Dark at top to sky blue at bottom */
-  padding: 40px 20px;
-  box-sizing: border-box;
+  min-height: 100vh;
+  background: #0a1f3d; /* Dark blue background */
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
-/* Heading styles */
-.heading {
-  font-size: 2.5rem;
-  color: #fff;
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  height: 400px;
+  background-image: url('https://via.placeholder.com/1200x400'); /* Replace with your hotel image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  overflow: hidden;
   margin-bottom: 40px;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 12px;
   text-align: center;
 }
 
-/* Grid of plan boxes */
-.plans {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
+.heading {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Individual plan box */
-.plan {
-  background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: left; /* Align text to the left */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer; /* Indicate it's clickable */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Hover effect: scale up and add extra shadow */
-.plan:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-}
-
-/* Plan title */
-.plan-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #007bff;
-}
-
-/* Plan description */
-.plan-description {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 15px;
-}
-
-/* Features list with tick icons */
-.plan-features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 15px 0;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.plan-features li {
-  margin: 5px 0;
-  padding-left: 25px; /* Space for the tick */
-  position: relative;
-}
-
-/* Use a tick icon (Unicode checkmark) positioned on the left */
-.plan-features li::before {
-  content: '✔';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: green;
-  font-size: 1rem;
-}
-
-/* Button styling */
-.plan-button {
-  display: block;
-  width: 100%;
+.search-bar input {
   padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.1); /* Subtle input background */
+  color: #fff;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Placeholder text color */
+}
+
+.search-button {
+  padding: 10px 20px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -99,6 +73,129 @@
   transition: background-color 0.3s;
 }
 
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Plans Section */
+.plans {
+  display: flex;
+  gap: 30px; /* Increased gap between plan containers */
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: flex-end; /* Align plans at the bottom */
+  padding: 20px 0; /* Added padding for better spacing */
+}
+
+.plan {
+  background: #f5f5dc; /* Beige background for plan containers */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+  cursor: pointer;
+  width: 280px; /* Slightly wider for better content display */
+  height: 400px; /* Default height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(221, 221, 221, 0.3); /* Subtle border */
+}
+
+.plan.selected {
+  height: 450px; /* Taller height for selected plan */
+  background: #e0dcc2; /* Slightly darker beige for selected plan */
+}
+
+.plan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.plan-image {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.plan-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 20px;
+  color: #007bff;
+  text-align: center; /* Center the title */
+}
+
+.plan-description {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 20px 20px;
+  text-align: center; /* Center the description */
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 20px 20px;
+}
+
+.plan-features li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.feature-icon {
+  color: #28a745;
+  font-size: 1.2rem;
+}
+
+.plan-button {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 20px;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
 .plan-button:hover {
   background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background: #1a2a3d; /* Darker blue for footer */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px; /* Added margin for spacing */
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #007bff;
 }

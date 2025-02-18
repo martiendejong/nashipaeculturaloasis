@@ -1,0 +1,23 @@
+<nav [class.scrolled]="isScrolled">
+    <!-- Logo -->
+    <div class="logo">
+      <a routerLink="/home">MyWebsite</a>
+    </div>
+  
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  
+    <!-- Navbar Links -->
+    <ul [class.active]="isMenuOpen">
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      <li><a routerLink="/activities" routerLinkActive="active">Activities</a></li>
+      <li><a routerLink="/booking" routerLinkActive="active" class="cta">Booking</a></li>
+      <li><a routerLink="/meals" routerLinkActive="active">Meals</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    </ul>
+  </nav>

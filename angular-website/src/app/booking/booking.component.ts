@@ -6,33 +6,26 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.scss']
+  styleUrls: ['./booking.component.scss'],
 })
 export class BookingComponent {
-  @Input() src?: string;  // Added so that [src] binding is recognized
+  @Input() src: string | undefined;
 
   heading = 'Make a Booking at Nashipae Cultural Oasis';
+  selectedPlanIndex: number | null = null; // Track the selected plan
 
   plans = [
     {
       title: 'Basic Plan',
       description: 'Includes;',
-      features: [
-        'Free WiFi',
-        '4x6 Bed',
-        'Hot Shower',
-        'Breakfast'
-      ]
+      features: ['Free WiFi', '4x6 Bed', 'Hot Shower', 'Breakfast'],
+      image: 'https://via.placeholder.com/300x200',
     },
     {
       title: 'Standard Plan',
       description: 'Includes;',
-      features: [
-        'Free WiFi',
-        '5x6 Bed',
-        'Hot Shower',
-        'Breakfast',
-      ]
+      features: ['Free WiFi', '5x6 Bed', 'Hot Shower', 'Breakfast'],
+      image: 'https://via.placeholder.com/300x200',
     },
     {
       title: 'Premium Plan',
@@ -43,8 +36,9 @@ export class BookingComponent {
         'Hot Shower',
         'Breakfast',
         'Lunch + Dinner',
-        'Laundry'
-      ]
+        'Laundry',
+      ],
+      image: 'https://via.placeholder.com/300x200',
     },
     {
       title: 'Full House',
@@ -54,8 +48,14 @@ export class BookingComponent {
         'Kitchen',
         'Seating Area',
         'Dining Area',
-        'All Premium features'
-      ]
-    }
+        'All Premium features',
+      ],
+      image: 'https://via.placeholder.com/300x200',
+    },
   ];
+
+  // Function to select a plan
+  selectPlan(index: number) {
+    this.selectedPlanIndex = index;
+  }
 }
