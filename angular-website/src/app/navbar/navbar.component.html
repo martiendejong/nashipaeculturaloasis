@@ -1,23 +1,53 @@
+<!-- Navbar -->
 <nav [class.scrolled]="isScrolled">
-    <!-- Logo -->
-    <div class="logo">
-      <a routerLink="/home">MyWebsite</a>
-    </div>
-  
-    <!-- Hamburger Menu for Mobile -->
-    <div class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  
-    <!-- Navbar Links -->
-    <ul [class.active]="isMenuOpen">
-      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-      <li><a routerLink="/activities" routerLinkActive="active">Activities</a></li>
-      <li><a routerLink="/booking" routerLinkActive="active" class="cta">Booking</a></li>
-      <li><a routerLink="/meals" routerLinkActive="active">Meals</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Logo -->
+  <div class="logo">
+    <a routerLink="/home">NashipaeCulturalOasis</a>
+  </div>
+
+  <!-- Hamburger Menu for Mobile -->
+  <div class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Navbar Links -->
+  <ul [class.active]="isMenuOpen">
+    <li><a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a></li>
+    <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a></li>
+    <li><a routerLink="/activities" routerLinkActive="active" (click)="closeMenu()">Activities</a></li>
+    <li><a routerLink="/booking" routerLinkActive="active" class="cta" (click)="closeMenu()">Booking</a></li>
+    <li><a routerLink="/meals" routerLinkActive="active" (click)="closeMenu()">Meals</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<div class="main-content">
+  <h2>Welcome to Nashipae Cultural Oasis</h2>
+  <p>Experience the rich culture and traditions of the Maasai people.</p>
+
+  <!-- Example Page Content -->
+  <section>
+    <h3>About Us</h3>
+    <p>
+      Nashipae Cultural Oasis is a unique destination where you can immerse yourself in the vibrant culture of the Maasai community. From traditional dances to guided safaris, we offer unforgettable experiences.
+    </p>
+  </section>
+
+  <section>
+    <h3>Our Activities</h3>
+    <p>
+      Explore our range of activities, including wildlife safaris, cultural tours, and hands-on workshops. Whether you're an adventurer or a culture enthusiast, there's something for everyone.
+    </p>
+  </section>
+
+  <section>
+    <h3>Book Your Stay</h3>
+    <p>
+      Ready to experience the magic of Nashipae Cultural Oasis? Book your stay now and prepare for an unforgettable journey.
+    </p>
+    <a routerLink="/booking" class="cta">Book Now</a>
+  </section>
+</div>

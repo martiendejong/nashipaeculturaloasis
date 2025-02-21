@@ -1,12 +1,14 @@
-<!-- Navbar -->
 <nav [class.scrolled]="isScrolled">
   <!-- Logo -->
   <div class="logo">
-    <a routerLink="/home">NashipaeCulturalOasis</a>
+    <a routerLink="/home">
+      <img src="assets/logo.png" alt="MyWebsite Logo" class="logo-img" />
+      <span class="logo-text">MyWebsite</span>
+    </a>
   </div>
 
   <!-- Hamburger Menu for Mobile -->
-  <div class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Toggle Menu">
+  <div class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
     <span></span>
     <span></span>
     <span></span>
@@ -14,60 +16,50 @@
 
   <!-- Navbar Links -->
   <ul [class.active]="isMenuOpen">
-    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-    <li><a routerLink="/activities" routerLinkActive="active">Activities</a></li>
-    <li><a routerLink="/booking" routerLinkActive="active" class="cta">Booking</a></li>
-    <li><a routerLink="/meals" routerLinkActive="active">Meals</a></li>
-    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-    <li><a routerLink="/menu" routerLinkActive="active">Menu</a></li>
-    <li><a routerLink="/rooms" routerLinkActive="active">Rooms</a></li>
+    <li>
+      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/about" routerLinkActive="active">
+        <i class="fas fa-info-circle"></i>
+        <span>About</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/activities" routerLinkActive="active">
+        <i class="fas fa-hiking"></i>
+        <span>Activities</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/booking" routerLinkActive="active" class="cta">
+        <i class="fas fa-calendar-check"></i>
+        <span>Booking</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/meals" routerLinkActive="active">
+        <i class="fas fa-utensils"></i>
+        <span>Meals</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/contact" routerLinkActive="active">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/rooms" routerLinkActive="active">
+        <i class="fas fa-bed"></i>
+        <span>Rooms</span>
+      </a>
+    </li>
   </ul>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Personalized Adventures</h1>
-    <p>Embark on epic safaris and get immersed in local culture.</p>
-    <a routerLink="/booking" class="cta">Book Now</a>
-  </div>
-</section>
-
 <!-- This is where the page content will change -->
 <router-outlet></router-outlet>
-
-<!-- Footer -->
-<footer>
-  <div class="footer-container">
-    <!-- About Section -->
-    <div class="footer-section">
-      <h3>About Us</h3>
-      <p>We are dedicated to providing personalized adventures and unforgettable experiences. Join us on our journey!</p>
-      <div class="social-links">
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-
-    <!-- Quick Links Section -->
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/about">About</a></li>
-        <li><a routerLink="/activities">Activities</a></li>
-        <li><a routerLink="/booking">Booking</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Footer Bottom -->
-  <div class="footer-bottom">
-    <p>&copy; 2023 NashipaeCulturalOasis. All rights reserved. | <a routerLink="/privacy-policy">Privacy Policy</a></p>
-  </div>
-</footer>
