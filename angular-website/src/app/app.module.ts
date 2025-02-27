@@ -4,25 +4,23 @@ import { RouterModule } from '@angular/router'; // Import RouterModule
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { BookingComponent } from './booking/booking.component';
 import { ContactComponent } from './contact/contact.component';
 import { MealsComponent } from './meals/meals.component';
-import { RoomsComponent } from './rooms/rooms.component'; // Removed MenuComponent
+import { RoomsComponent } from './rooms/rooms.component';
 
 import { routes } from './app.routes'; // Import your routes
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutComponent,
+    HomeComponent, // Removed AboutComponent
     ActivitiesComponent,
     BookingComponent,
     ContactComponent,
     MealsComponent,
-    RoomsComponent // Removed MenuComponent
+    RoomsComponent
   ],
   imports: [
     BrowserModule,

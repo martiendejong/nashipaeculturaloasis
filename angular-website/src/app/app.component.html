@@ -2,8 +2,8 @@
   <!-- Logo -->
   <div class="logo">
     <a routerLink="/home">
-      <img src="assets/logo.png" alt="MyWebsite Logo" class="logo-img" />
-      <span class="logo-text">MyWebsite</span>
+      <img src="assets/nashipae.svg" class="logo-img" />
+    
     </a>
   </div>
 
@@ -20,12 +20,6 @@
       <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <i class="fas fa-home"></i>
         <span>Home</span>
-      </a>
-    </li>
-    <li>
-      <a routerLink="/about" routerLinkActive="active">
-        <i class="fas fa-info-circle"></i>
-        <span>About</span>
       </a>
     </li>
     <li>
@@ -61,5 +55,7 @@
   </ul>
 </nav>
 
-<!-- This is where the page content will change -->
-<router-outlet></router-outlet>
+<!-- Main Content -->
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

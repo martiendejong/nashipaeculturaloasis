@@ -1,6 +1,6 @@
 /* Navbar Styles */
 nav {
-  background: #fff; /* Light background */
+  background: #2e2c2c38; /* Light background */
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -13,7 +13,7 @@ nav {
 
   /* Navbar scrolled effect */
   &.scrolled {
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white on scroll */
+    background: rgba(146, 142, 142, 0.9); /* Semi-transparent white on scroll */
   }
 
   /* Logo */

@@ -12,31 +12,36 @@ import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common
     standalone: true,
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss', '../page.scss'],
-    providers: [{provide: HttpClient, useFactory: provideHttpClient}],
+    providers: [{ provide: HttpClient, useFactory: provideHttpClient }],
     imports: [FullImgComponent, CarouselCycleComponent, NgFor, NgIf, HttpClientModule]
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  @ViewChild(CarouselCycleComponent) carousel!: CarouselCycleComponent;
+    @ViewChild(CarouselCycleComponent) carousel!: CarouselCycleComponent;
 
-  @Input() src: any;
+    @Input() src: any;
+    @Input() aboutSrc: string = 'assets/about.json'; // Path to About JSON
 
-  public content: any;
-  private languageSubscription: Subscription;
+    public content: any;
+    public aboutContent: any; // Property for About content
+    private languageSubscription: Subscription;
 
-  constructor(private jsonLoaderService: JsonLoaderService, private languageService: LanguageService) {
-    this.languageSubscription = this.languageService.currentLanguage.subscribe(async language => {
-      this.src = `assets/home.${language.code}.json`;
-      this.content = await this.jsonLoaderService.loadJson(this.src);
-    });
-  }
-
-  async ngOnInit() {
-    this.content = await this.jsonLoaderService.loadJson(this.src);
-  }
-
-  ngOnDestroy() {
-    if (this.languageSubscription) {
-      this.languageSubscription.unsubscribe();
+    constructor(private jsonLoaderService: JsonLoaderService, private languageService: LanguageService) {
+        this.languageSubscription = this.languageService.currentLanguage.subscribe(async language => {
+            this.src = `assets/home.${language.code}.json`;
+            this.aboutSrc = `assets/about.${language.code}.json`; // Update About JSON path
+            this.content = await this.jsonLoaderService.loadJson(this.src);
+            this.aboutContent = await this.jsonLoaderService.loadJson(this.aboutSrc); // Load About content
+        });
     }
-  }
+
+    async ngOnInit() {
+        this.content = await this.jsonLoaderService.loadJson(this.src);
+        this.aboutContent = await this.jsonLoaderService.loadJson(this.aboutSrc); // Load About content
+    }
+
+    ngOnDestroy() {
+        if (this.languageSubscription) {
+            this.languageSubscription.unsubscribe();
+        }
+    }
 }

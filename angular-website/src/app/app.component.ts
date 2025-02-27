@@ -4,10 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { MealsComponent } from './meals/meals.component';
-import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { BookingComponent } from './booking/booking.component';
-import { MenuComponent } from './menu/menu.component';
 import { Scroll } from './scroll.service';
 import { filter } from 'rxjs';
 import { ViewportScroller, Location, PlatformLocation, isPlatformBrowser } from '@angular/common';
@@ -24,12 +22,10 @@ import { CommonModule } from '@angular/common'; // Import CommonModule for ngCla
     RouterLinkActive, // Add RouterLinkActive
     HomeComponent,
     RoomsComponent,
-    AboutComponent,
     ActivitiesComponent,
     MealsComponent,
     ContactComponent,
-    BookingComponent,
-    MenuComponent
+    BookingComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
