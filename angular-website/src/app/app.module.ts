@@ -11,17 +11,19 @@ import { MealsComponent } from './meals/meals.component';
 import { RoomsComponent } from './rooms/rooms.component';
 
 import { routes } from './app.routes'; // Import your routes
+import { About.componentComponent } from './About.component/About.component.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HomeComponent, // Removed AboutComponent
     ActivitiesComponent,
     BookingComponent,
     ContactComponent,
     MealsComponent,
-    RoomsComponent
-  ],
+    RoomsComponent,
+      About.componentComponent
+   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes) // Add RouterModule with your routes

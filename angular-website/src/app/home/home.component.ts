@@ -6,6 +6,7 @@ import { JsonLoaderService } from '../json-loader.service';
 import { Subscription } from 'rxjs';
 import { LanguageService } from '../language.service';
 import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { Router } from '@angular/router'; // Import Router
 
 @Component({
     selector: 'app-home',
@@ -25,7 +26,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     public aboutContent: any; // Property for About content
     private languageSubscription: Subscription;
 
-    constructor(private jsonLoaderService: JsonLoaderService, private languageService: LanguageService) {
+    constructor(
+        private jsonLoaderService: JsonLoaderService, 
+        private languageService: LanguageService,
+        private router: Router // Inject Router
+    ) {
         this.languageSubscription = this.languageService.currentLanguage.subscribe(async language => {
             this.src = `assets/home.${language.code}.json`;
             this.aboutSrc = `assets/about.${language.code}.json`; // Update About JSON path
@@ -43,5 +48,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         if (this.languageSubscription) {
             this.languageSubscription.unsubscribe();
         }
+    }
+
+    // Method to navigate to the booking page
+    navigateToBooking() {
+        this.router.navigate(['/booking']); // Replace '/booking' with your desired route
     }
 }
