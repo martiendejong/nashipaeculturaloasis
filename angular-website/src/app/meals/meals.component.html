@@ -1,53 +1,80 @@
 <div class="minviewheight">
-    <!-- Loading Spinner -->
-    <div *ngIf="!content" class="loading-spinner">
-      <div class="spinner"></div>
+  <!-- Loading Spinner -->
+  <div *ngIf="!content" class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Content -->
+  <div *ngIf="content">
+    <!-- Image Background Section -->
+    <div class="meal-background">
+      <div class="meal-details">
+        <h1>Chicken Salad Bowl</h1>
+        <p class="description">With Black Beans and Veggies</p>
+        <button class="learn-more-btn" (click)="scrollToMoreDishes()">Learn More</button>      
+      </div>
     </div>
-  
-    <!-- Error Message -->
-    <div *ngIf="errorMessage" class="error-message">
-      {{ errorMessage }}
-    </div>
-  
-    <!-- Content -->
-    <div *ngIf="content">
-      <h1>{{ content.title }}</h1>
-      <div class="container">
-        <div class="category" *ngFor="let category of content.container">
-          <div class="category-header">
-            <h2 class="category-title">{{ category.category }}</h2>
+
+    <!-- Cards Section -->
+    <div class="cards-section">
+      <h2 class="section-title">More Dishes</h2>
+      <div class="card-container">
+        <!-- Card 1 -->
+        <div class="dish-card">
+          <img src="../../assets/dinner.jpg" alt="Dish 1" class="card-image">
+          <div class="card-details">
+            <h3 class="dish-name">Ugali Managu</h3>
+            <p class="dish-description">Traditional Kenyan dish with maize flour porridge and leaves of nightshade.</p>
           </div>
-          <div class="dish-grid">
-            <div class="dish-card" *ngFor="let dish of category.dishes">
-              <div class="image-container">
-                <app-full-img class="picture" [src]="dish.image"></app-full-img>
-                <div class="overlay">
-                  <p class="overlay-text">{{ dish.time }} mins · Serves {{ dish.serves }}</p>
-                </div>
-              </div>
-              <div class="details">
-                <div class="badge-container">
-                  <span class="diet-badge" *ngIf="dish.vegetarian">Vegetarian</span>
-                  <span class="diet-badge" *ngIf="dish.spicy">Spicy</span>
-                </div>
-                <h3 class="name">{{ dish.name }}</h3>
-                <div class="rating">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                  <span class="rating-text">4.5</span>
-                </div>
-                <p class="price">{{ dish.currency }}{{ dish.price }}</p>
-                <button class="order-button">
-                  <span>Add to Cart</span>
-                  <i class="fas fa-shopping-cart"></i>
-                </button>
-              </div>
-            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="dish-card">
+          <img src="../../assets/Salami Pizza.jpg" alt="Dish 2" class="card-image">
+          <div class="card-details">
+            <h3 class="dish-name">Pizza Margherita</h3>
+            <p class="dish-description">Pizza with tomato and cheese.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="dish-card">
+          <img src="../../assets/Swahili Dish .jpg" alt="Dish 3" class="card-image">
+          <div class="card-details">
+            <h3 class="dish-name">Kenyan Dish</h3>
+            <p class="dish-description">A burger with lettuce and tomato.</p>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="dish-card">
+          <img src="../../assets/Salami Pizza.jpg" alt="Dish 4" class="card-image">
+          <div class="card-details">
+            <h3 class="dish-name">Pizza</h3>
+            <p class="dish-description">A flatbread made of whole wheat flour.</p>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="dish-card">
+          <img src="../../assets/Salami Pizza.jpg" alt="Dish 4" class="card-image">
+          <div class="card-details">
+            <h3 class="dish-name">Pizza</h3>
+            <p class="dish-description">A flatbread made of whole wheat flour.</p>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="dish-card">
+          <img src="../../assets/Salami Pizza.jpg" alt="Dish 4" class="card-image">
+          <div class="card-details">
+            <h3 class="dish-name">Pizza</h3>
+            <p class="dish-description">A flatbread made of whole wheat flour.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

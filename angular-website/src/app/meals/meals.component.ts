@@ -4,6 +4,7 @@ import { JsonLoaderService } from '../json-loader.service';
 import { NgFor, NgIf, NgClass } from '@angular/common'; // Add NgClass here
 import { LanguageService } from '../language.service';
 import { Subscription } from 'rxjs';
+import { ViewportScroller } from '@angular/common'; // Import ViewportScroller
 
 @Component({
     selector: 'app-meals',
@@ -22,7 +23,11 @@ export class MealsComponent implements OnInit {
     public errorMessage: string = '';
     private languageSubscription: Subscription;
 
-    constructor(private jsonLoaderService: JsonLoaderService, private languageService: LanguageService) {
+    constructor(
+        private jsonLoaderService: JsonLoaderService,
+        private languageService: LanguageService,
+        private viewportScroller: ViewportScroller // Inject ViewportScroller
+    ) {
         this.languageSubscription = this.languageService.currentLanguage.subscribe(async language => {
             this.src = `assets/meals.${language.code}.json`;
             try {
@@ -56,6 +61,11 @@ export class MealsComponent implements OnInit {
                 cat.category.toLowerCase() === category.toLowerCase()
             );
         }
+    }
+
+    // Method to scroll to the "More Dishes" section
+    scrollToMoreDishes() {
+        this.viewportScroller.scrollToAnchor('more-dishes');
     }
 
     ngOnDestroy() {
