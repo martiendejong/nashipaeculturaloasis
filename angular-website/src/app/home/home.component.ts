@@ -6,7 +6,7 @@ import { JsonLoaderService } from '../json-loader.service';
 import { Subscription } from 'rxjs';
 import { LanguageService } from '../language.service';
 import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
-import { Router } from '@angular/router'; // Import Router
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -21,9 +21,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     @Input() src: any;
     @Input() aboutSrc: string = 'assets/about.json'; // Path to About JSON
+    @Input() roomsSrc: string = 'assets/rooms.json'; // Path to Rooms JSON
 
     public content: any;
     public aboutContent: any; // Property for About content
+    public roomsContent: any; // Property for Rooms content
     private languageSubscription: Subscription;
 
     constructor(
@@ -34,14 +36,17 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.languageSubscription = this.languageService.currentLanguage.subscribe(async language => {
             this.src = `assets/home.${language.code}.json`;
             this.aboutSrc = `assets/about.${language.code}.json`; // Update About JSON path
+            this.roomsSrc = `assets/rooms.${language.code}.json`; // Update Rooms JSON path
             this.content = await this.jsonLoaderService.loadJson(this.src);
             this.aboutContent = await this.jsonLoaderService.loadJson(this.aboutSrc); // Load About content
+            this.roomsContent = await this.jsonLoaderService.loadJson(this.roomsSrc); // Load Rooms content
         });
     }
 
     async ngOnInit() {
         this.content = await this.jsonLoaderService.loadJson(this.src);
         this.aboutContent = await this.jsonLoaderService.loadJson(this.aboutSrc); // Load About content
+        this.roomsContent = await this.jsonLoaderService.loadJson(this.roomsSrc); // Load Rooms content
     }
 
     ngOnDestroy() {

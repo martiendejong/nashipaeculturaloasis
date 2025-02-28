@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router'; // Import RouterModule
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -8,25 +8,23 @@ import { ActivitiesComponent } from './activities/activities.component';
 import { BookingComponent } from './booking/booking.component';
 import { ContactComponent } from './contact/contact.component';
 import { MealsComponent } from './meals/meals.component';
-import { RoomsComponent } from './rooms/rooms.component';
+import { AboutComponent } from './about/about.component';
 
-import { routes } from './app.routes'; // Import your routes
-import { About.componentComponent } from './About.component/About.component.component';
+import { routes } from './app.routes';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
-    HomeComponent, // Removed AboutComponent
+    HomeComponent,
     ActivitiesComponent,
     BookingComponent,
     ContactComponent,
     MealsComponent,
-    RoomsComponent,
-      About.componentComponent
-   ],
+    AboutComponent
+  ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes) // Add RouterModule with your routes
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
