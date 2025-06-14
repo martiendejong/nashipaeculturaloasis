@@ -59,4 +59,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     navigateToBooking() {
         this.router.navigate(['/booking']); // Replace '/booking' with your desired route
     }
+
+    navigateToRoom(roomId: string) {
+        this.router.navigate(['/rooms'], { fragment: roomId });
+    }
 }

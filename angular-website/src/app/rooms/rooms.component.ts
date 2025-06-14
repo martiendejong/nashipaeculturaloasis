@@ -1,38 +1,39 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { FullImgComponent } from '../full-img/full-img.component';
-import { JsonLoaderService } from '../json-loader.service';
-import { Subscription } from 'rxjs';
-import { LanguageService } from '../language.service';
-import { NgFor, NgIf } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-rooms',
   standalone: true,
-  imports: [FullImgComponent, NgFor, NgIf],
+  imports: [CommonModule],
   templateUrl: './rooms.component.html',
-  styleUrls: ['./rooms.component.scss', '../page.scss']
+  styleUrls: ['./rooms.component.scss']
 })
-export class RoomsComponent implements OnInit, OnDestroy {
+export class RoomsComponent implements OnInit {
+  expandedRooms = {
+    bedroom1: false,
+    bedroom2: false,
+    livingroom: false,
+    veranda: false
+  };
 
-  @Input() src: any;
+  constructor(private route: ActivatedRoute) {}
 
-  public content: any;
-  private languageSubscription: Subscription;
-
-  constructor(private jsonLoaderService: JsonLoaderService, private languageService: LanguageService) {
-    this.languageSubscription = this.languageService.currentLanguage.subscribe(async language => {
-      this.src = `assets/rooms.${language.code}.json`;
-      this.content = await this.jsonLoaderService.loadJson(this.src);
+  ngOnInit() {
+    // Check for fragment in URL and expand the corresponding room
+    this.route.fragment.subscribe(fragment => {
+      if (fragment && this.expandedRooms.hasOwnProperty(fragment)) {
+        this.expandedRooms[fragment as keyof typeof this.expandedRooms] = true;
+        // Scroll to the room
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     });
   }
 
-  async ngOnInit() {
-    this.content = await this.jsonLoaderService.loadJson(this.src);
-  }
-
-  ngOnDestroy() {
-    if (this.languageSubscription) {
-      this.languageSubscription.unsubscribe();
-    }
+  toggleRoom(roomId: string) {
+    this.expandedRooms[roomId as keyof typeof this.expandedRooms] = !this.expandedRooms[roomId as keyof typeof this.expandedRooms];
   }
 }
