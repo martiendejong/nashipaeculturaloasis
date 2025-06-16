@@ -1,53 +1,82 @@
-<div class="minviewheight secondary-background-color" *ngIf="content">
-  <!-- Title Container -->
+<div class="contact-container" *ngIf="content">
+  <div class="contact-header">
   <h1 *ngFor="let title of content.title">{{ title }}</h1>
-
-  <!-- About Description Container -->
   <p *ngFor="let item of content.text" [innerHTML]="item"></p>
+  </div>
 
-  <!-- Main Content Container: Contact Form on the Left, Map on the Right -->
+  <!-- Contact Information Section -->
+  <div class="contact-info-section">
+    <div class="info-card">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Location</h3>
+      <p>Nashipea Cultural Oasis</p>
+      <p>Nashipea, Tanzania</p>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-phone"></i>
+      <h3>Phone</h3>
+      <p>+255 123 456 789</p>
+      <p>+255 987 654 321</p>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-envelope"></i>
+      <h3>Email</h3>
+      <p>info&#64;nashipea.com</p>
+      <p>bookings&#64;nashipea.com</p>
+    </div>
+  </div>
+
+  <!-- Main Content Container -->
   <div class="main-content">
       <!-- Left Side: Contact Form -->
-      <form class="left-side">
-          <!-- Name Fields (First and Last Name on One Line) -->
+    <div class="form-container">
+      <h2>Send us a Message</h2>
+      <form class="contact-form">
           <div class="name-section">
-              <div class="name-field">
+          <div class="form-group">
                   <label for="firstName">First Name <span class="required">*</span></label>
-                  <input type="text" id="firstName" name="firstName" placeholder="e.g. first name" required>
+            <input type="text" id="firstName" name="firstName" placeholder="e.g. John" required>
               </div>
-              <div class="name-field">
+          <div class="form-group">
                   <label for="lastName">Last Name <span class="required">*</span></label>
-                  <input type="text" id="lastName" name="lastName" placeholder="e.g. last name" required>
+            <input type="text" id="lastName" name="lastName" placeholder="e.g. Doe" required>
               </div>
           </div>
 
-          <!-- Email -->
+        <div class="form-group">
           <label for="email">Email <span class="required">*</span></label>
-          <input type="email" id="email" name="email" placeholder="e.g. example@gmail.com" required>
+          <input type="email" id="email" name="email" placeholder="e.g. john&#64;example.com" required>
+        </div>
 
-          <!-- Phone -->
+        <div class="form-group">
           <label for="phone">Phone <span class="required">*</span></label>
-          <input type="tel" id="phone" name="phone" placeholder="e.g. +31612345678" required>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. +255 123 456 789" required>
+        </div>
 
-          <!-- Subject -->
+        <div class="form-group">
           <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="e.g. Subject">
+          <input type="text" id="subject" name="subject" placeholder="e.g. Booking Inquiry">
+        </div>
 
-          <!-- Message -->
+        <div class="form-group">
           <label for="message">Your Message</label>
-          <textarea id="message" name="message" placeholder="e.g. Your message"></textarea>
+          <textarea id="message" name="message" placeholder="Please type your message here..."></textarea>
+        </div>
 
-          <!-- CSRF Token -->
           <input type="hidden" id="csrf_token" name="csrf_token" [value]="csrfToken">
 
-          <!-- Submit Button -->
-          <button *ngIf="!loading" type="button" class="submit-button" (click)="submitForm()">Submit</button>
+        <button *ngIf="!loading" type="button" class="submit-button" (click)="submitForm()">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
       </form>
+    </div>
 
       <!-- Right Side: Map Container -->
-      <div class="right-side">
+    <div class="map-container">
+      <h2>Find Us</h2>
+      <div class="map-wrapper">
           <iframe
-              src="https://www.google.com/maps?q=1%C2%B035%2755%22S+35%C2%B023%2729%22E&output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5!2d35.3915!3d-1.5986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMzUnNTUuNiJTIDM1wrAyMycyOS4xIkU!5e0!3m2!1sen!2stz!4v1620000000000!5m2!1sen!2stz"
               width="100%"
               height="450"
               style="border:0;"
@@ -55,6 +84,7 @@
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
+      </div>
       </div>
   </div>
 </div>

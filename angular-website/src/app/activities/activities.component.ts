@@ -19,10 +19,10 @@ interface Activity {
 }
 
 @Component({
-  selector: 'app-activities',
-  standalone: true,
+    selector: 'app-activities',
+    standalone: true,
   imports: [CommonModule, CarouselFaderComponent],
-  templateUrl: './activities.component.html',
+    templateUrl: './activities.component.html',
   styleUrls: ['./activities.component.scss']
 })
 export class ActivitiesComponent implements OnInit {
@@ -273,5 +273,5 @@ export class ActivitiesComponent implements OnInit {
         title: activity.title[0]
       }
     });
-  }
+    }
 }

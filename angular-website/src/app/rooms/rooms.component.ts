@@ -28,7 +28,7 @@ export class RoomsComponent implements OnInit {
         const element = document.getElementById(fragment);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
-        }
+  }
       }
     });
   }
