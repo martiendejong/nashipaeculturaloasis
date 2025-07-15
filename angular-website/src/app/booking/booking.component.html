@@ -2,43 +2,57 @@
   <!-- Hero Section -->
   <div class="hero-section">
     <div class="hero-overlay">
-      <h1 class="heading">{{ heading }}</h1>
-      <div class="search-bar">
+      <h1 class="heading">Book Your Stay at Nashipae Cultural Oasis</h1>
+      <form class="booking-form">
         <input type="date" placeholder="Check-in Date" />
         <input type="date" placeholder="Check-out Date" />
-        <input type="number" placeholder="Guests" />
-        <button class="search-button">Search</button>
-      </div>
+        <input type="number" placeholder="Guests" min="1" />
+        <button class="search-button" type="submit">Check Availability</button>
+      </form>
     </div>
   </div>
 
   <!-- Plans Section -->
-  <div class="plans">
+  <div class="plans-grid">
     <div
-      class="plan"
+      class="plan-card"
       *ngFor="let plan of plans; let i = index"
       [ngClass]="{ selected: selectedPlanIndex === i }"
       (click)="selectPlan(i)"
     >
       <div class="plan-image" [ngStyle]="{ 'background-image': 'url(' + plan.image + ')' }"></div>
-      <h2 class="plan-title">{{ plan.title }}</h2>
-      <p class="plan-description">{{ plan.description }}</p>
-      <ul class="plan-features">
-        <li *ngFor="let feature of plan.features">
-          <span class="feature-icon">✔</span>{{ feature }}
-        </li>
-      </ul>
-      <button class="plan-button">Choose {{ plan.title }}</button>
+      <div class="plan-content">
+        <h2 class="plan-title">{{ plan.title }}</h2>
+        <p class="plan-description">{{ plan.description }}</p>
+        <ul class="plan-features">
+          <li *ngFor="let feature of plan.features">
+            <span class="feature-icon">✔</span>{{ feature }}
+          </li>
+        </ul>
+        <button class="plan-button">Choose {{ plan.title }}</button>
+      </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <div class="footer">
-    <p>Contact us: info&#64;nashipaeoasis.com | +254 712 345 678</p>
-    <div class="social-links">
-      <a href="#">Facebook</a>
-      <a href="#">Twitter</a>
-      <a href="#">Instagram</a>
+  <!-- Why Book With Us Section -->
+  <div class="why-book-section">
+    <h2>Why Book With Us?</h2>
+    <div class="why-cards">
+      <div class="why-card">
+        <i class="fas fa-tag"></i>
+        <h3>Best Price Guarantee</h3>
+        <p>Get the best rates when you book directly with us.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-headset"></i>
+        <h3>24/7 Support</h3>
+        <p>Our team is always available to assist you with your needs.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-star"></i>
+        <h3>Unique Experiences</h3>
+        <p>Enjoy authentic cultural and luxury experiences in Maasai Mara.</p>
+      </div>
     </div>
   </div>
 </div>

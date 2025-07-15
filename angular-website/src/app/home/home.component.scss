@@ -84,13 +84,14 @@
 
 .book-now-button {
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 20px;
-  right: 35px;
   padding: 10px 20px;
   font-size: 3vh;
   font-weight: bold;
-  color: white;
-  background-color: #134b8b4f;
+  color: black;
+  background-color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -98,7 +99,8 @@
 }
 
 .book-now-button:hover {
-  background-color: transparent;
+  background-color: #f0f0f0;
+  color: black;
 }
 
 .text {
