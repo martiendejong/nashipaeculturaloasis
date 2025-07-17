@@ -5,7 +5,6 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { MealsComponent } from './meals/meals.component';
 import { ContactComponent } from './contact/contact.component';
-import { BookingComponent } from './booking/booking.component';
 import { Scroll } from './scroll.service';
 import { filter } from 'rxjs';
 import { ViewportScroller, Location, PlatformLocation, isPlatformBrowser } from '@angular/common';
@@ -25,7 +24,6 @@ import { CommonModule } from '@angular/common'; // Import CommonModule for ngCla
     ActivitiesComponent,
     MealsComponent,
     ContactComponent,
-    BookingComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

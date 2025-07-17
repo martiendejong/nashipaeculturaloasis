@@ -50,34 +50,34 @@ export class ActivitiesComponent implements OnInit {
           'Immerse yourself in the rich cultural heritage of the Maasai people. Visit a traditional village, learn about their customs, and witness their way of life. Experience traditional dances, crafts, and storytelling.'
         ],
         image: 'assets/maasai.jpeg',
-        sliderImage: 'assets/olalaimutia village.jpg',
-        backgroundImage: 'assets/background.jpg',
+        sliderImage: 'assets/background2.jpeg',
+        backgroundImage: 'assets/background2.jpeg',
         duration: '3 hours',
         participants: '2-10 people',
         category: 'Cultural',
         shortDescription: 'Experience the authentic Maasai culture through village tours and traditional activities.',
         teaser: [
           'Experience the rich culture and exciting adventures at Nashipae Cultural Oasis',
-          'Discover traditional crafts and authentic experiences'
+          'Dive into peace and tranquility at Nashipae Cultural Oasis'
         ]
       },
       {
-        anchor: 'traditional-dance',
-        title: ['Traditional Dance Workshop'],
+        anchor: 'games-reserve-safari',
+        title: ['Games Reserve Safari'],
         text: [
-          'Learn traditional Maasai dance moves from expert performers.',
-          'Learn the art of traditional Maasai dance from expert performers. This interactive workshop includes basic steps, cultural significance, and a chance to perform with the group.'
+          'Embark on an unforgettable safari through the renowned Maasai Mara Game Reserve. Witness the Big Five and a diverse array of wildlife in their natural habitat.',
+          'Enjoy guided game drives with expert rangers, sunrise and sunset safaris, and the chance to see lions, elephants, giraffes, zebras, and more. Capture breathtaking photos and learn about the unique ecosystem of the reserve.'
         ],
-        image: 'assets/beadworking.jpg',
-        sliderImage: 'assets/beadmaking.jpeg',
-        backgroundImage: 'assets/background2.jpeg',
-        duration: '2 hours',
-        participants: '4-15 people',
-        category: 'Cultural',
-        shortDescription: 'Learn traditional Maasai dance moves from expert performers.',
+        image: 'assets/safari14.jpeg',
+        sliderImage: 'assets/expiriencewildlife.jpg',
+        backgroundImage: 'assets/safari9.jpeg',
+        duration: 'Full Day',
+        participants: '2-8 people',
+        category: 'Adventure',
+        shortDescription: 'Explore the Maasai Mara Game Reserve and witness the Big Five on a guided safari adventure.',
         teaser: [
-          'Discover traditional crafts and authentic experiences',
-          'Learn the art of traditional Maasai dance'
+          'Experience the thrill of a real African safari',
+          'See the Big Five and more in the Maasai Mara'
         ]
       },
       {
