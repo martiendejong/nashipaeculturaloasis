@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   @Input() src: any;
 
   public content: any;
-  public csrfToken: string = '';
+  // public csrfToken: string = '';
   private languageSubscription: Subscription;
   public baseUrl: string = '';
 
@@ -34,7 +34,7 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   async ngOnInit() {
     this.content = await this.jsonLoaderService.loadJson(this.src);
-    await this.fetchCsrfToken();
+    // await this.fetchCsrfToken(); // CSRF token fetching commented out for now
   }
 
   ngOnDestroy() {
@@ -43,14 +43,14 @@ export class ContactComponent implements OnInit, OnDestroy {
     }
   }
 
-  async fetchCsrfToken() {
-    try {
-      const response = await axios.get<{ token: string }>(`${this.baseUrl}/csrf-token.php`);
-      this.csrfToken = response.data.token;
-    } catch (error) {
-      console.error('Error fetching CSRF token:', error);
-    }
-  }
+  // async fetchCsrfToken() {
+  //   try {
+  //     const response = await axios.get<{ token: string }>(`${this.baseUrl}/csrf-token.php`);
+  //     this.csrfToken = response.data.token;
+  //   } catch (error) {
+  //     console.error('Error fetching CSRF token:', error);
+  //   }
+  // }
 
   async submitForm() {
     this.loading = true;
@@ -62,7 +62,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     formData.append('phone', (document.getElementById('phone') as HTMLInputElement).value);
     formData.append('subject', (document.getElementById('subject') as HTMLInputElement).value);
     formData.append('message', (document.getElementById('message') as HTMLInputElement).value);
-    formData.append('csrf_token', this.csrfToken);
+    // formData.append('csrf_token', this.csrfToken); // CSRF token usage commented out for now
 
     try {
       const response = await axios.post(`${this.baseUrl}/contact.php`, formData);

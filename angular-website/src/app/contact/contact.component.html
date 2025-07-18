@@ -10,7 +10,7 @@
       <i class="fas fa-map-marker-alt"></i>
       <h3>Location</h3>
       <p>Nashipea Cultural Oasis</p>
-      <p>Nashipea, Kenya, Masaai Mara</p>
+      <p>Nashipea, Masaai Mara, Kenya </p>
     </div>
     <div class="info-card">
       <i class="fas fa-phone"></i>
@@ -63,7 +63,8 @@
           <textarea id="message" name="message" placeholder="Please type your message here..."></textarea>
         </div>
 
-          <input type="hidden" id="csrf_token" name="csrf_token" [value]="csrfToken">
+        <!-- <input type="hidden" id="csrf_token" name="csrf_token" [value]="csrfToken"> -->
+        <!-- CSRF token input commented out for now -->
 
         <button *ngIf="!loading" type="button" class="submit-button" (click)="submitForm()">
           <i class="fas fa-paper-plane"></i> Send Message
@@ -73,7 +74,7 @@
 
       <!-- Right Side: Map Container -->
     <div class="map-container">
-      <h2>Find Us</h2>
+      <h2>Travel to Nashipea</h2>
       <div class="map-wrapper">
           <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5!2d35.3915!3d-1.5986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMzUnNTUuNiJTIDM1wrAyMycyOS4xIkU!5e0!3m2!1sen!2stz!4v1620000000000!5m2!1sen!2stz"
